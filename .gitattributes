@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.png binary
+*.gif binary
+*.ico binary
+*.woff2 binary
+# Original licensed reference bytes are covered by source hash manifests.
+third_party/pattern-making/** -text
+third_party/tailor-dressmaker/** -text

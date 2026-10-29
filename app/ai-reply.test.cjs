@@ -1,0 +1,3 @@
+const {test}=require('node:test'),assert=require('node:assert/strict'),reply=require('./ai-reply.cjs');
+test('normal conversation and JSON fences do not cause parsing failures',()=>{assert.deepEqual(reply.parse('Продолжаем. Длина осталась 90 см.'),{message:'Продолжаем. Длина осталась 90 см.'});assert.equal(reply.parse('```json\n{"patterns":[{"type":"circle","diameter_mm":100}]}\n```').patterns[0].diameter_mm,100);});
+test('invalid or arbitrary commands remain blocked',()=>{assert.throws(()=>reply.parse('{"patterns":['));assert.throws(()=>reply.parse('{"code":"delete()"}'));assert.throws(()=>reply.parse('{"patterns":[{"type":"rectangle","width_mm":-10,"height_mm":100}]}'));assert.throws(()=>reply.parse(''));});

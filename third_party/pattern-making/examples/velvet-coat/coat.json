@@ -1,0 +1,15 @@
+{
+ "title": "Floor-length velvet coat",
+ "body": "women", "size": "38",
+ "fit": {"side_ease": 1.5, "dart_reduce": 0.5, "neck_widen": 1.0, "neck_drop": 1.0, "arm_drop": 3.0, "across_out": 1.0},
+ "shoulder": {"extend": 4.0, "pad": 2.5},
+ "shaping": "princess",
+ "length": {"below_waist": 118, "hem": 600},
+ "front": {"extension": 8, "buttons": [14, 25.5, 37, 48.5, 60, 71.5], "hold_to": 75},
+ "collar": {"type": "funnel", "h_cb": 13, "h_cf": 12, "funnel": 8},
+ "sleeve": {"length": 70.5, "hem": 26, "ease": 2.0, "elbow": 0.8},
+ "facing": {"back_neck": 12},
+ "lining": {"hem": "free", "up": 3, "cb_pleat": 2.5},
+ "pockets": {"type": "in-seam", "top": 6, "length": 17},
+ "allowance": 1.5, "hem_allowance": 5
+}

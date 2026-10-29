@@ -1,0 +1,1781 @@
+{
+  "name": "Pattern Engineering Knowledge Base",
+  "version": 1,
+  "checked_at": "2026-10-26",
+  "sources": [
+    {
+      "id": "iso8559",
+      "name": "ISO 8559-1:2017",
+      "edition": "1, 2017-03; карточка подтверждена 2026-10-24",
+      "url": "https://www.iso.org/standard/61686.html",
+      "verification": "official_abstract_only",
+      "implemented": false,
+      "facts": [
+        "Стандарт определяет антропометрические измерения, не универсальные формулы конструирования"
+      ],
+      "limits": [
+        "Полный нормативный текст не приобретался; соответствие измерений ISO не заявляется"
+      ]
+    },
+    {
+      "id": "mueller",
+      "name": "M. Müller & Sohn — опубликованные параметры футболки",
+      "edition": "Официальная карточка, дата издания не указана; проверена 2026-10-24",
+      "url": "https://www.muellerundsohn.com/en/shop/pattern-basic-longsleeve-and-t-shirt-block-for-women/",
+      "verification": "official_product_data_only",
+      "implemented": false,
+      "facts": [
+        "Для описанного базового T-shirt block заявлена прибавка 4 см к половине обхвата груди; для longsleeve — 2 см",
+        "В терминах полной окружности это соответственно 80 и 40 мм; это арифметическое преобразование опубликованных данных"
+      ],
+      "limits": [
+        "Это свойства конкретных блоков, не нормы для всех футболок",
+        "Полная последовательность и коммерческие лекала не копировались"
+      ]
+    },
+    {
+      "id": "mueller_trousers",
+      "name": "Pattern Making Men’s Trousers",
+      "edition": "Первое английское издание, 2020, 216 страниц",
+      "url": "https://www.muellerundsohn.com/en/shop/download-patternmaking-mens-trousers/",
+      "verification": "official_bibliography_only",
+      "implemented": false,
+      "facts": [
+        "Существуют разные блоки и коррекции фигуры"
+      ],
+      "limits": [
+        "Расчётные формулы закрытого издания не проверены и не воспроизведены"
+      ]
+    },
+    {
+      "id": "emko",
+      "name": "ЕМКО СЭВ, тома 2 и 4",
+      "edition": "Базовые конструкции женской одежды, 1988; градация, 1989",
+      "url": "https://library.sutd.ru/web/index.php?C21COM=S&I21DBN=KNIGI_FULLTEXT&LNG=&P21DBN=KNIGI&S21CNR=&S21FMT=briefHTML_ft&S21LOG=1&S21P01=0&S21P02=0&S21P03=K%3D&S21REF=&S21STN=1&S21STR=%D0%A0%D0%90%D0%97%D0%9C%D0%95%D0%A0%D0%9D%D0%AB%D0%95+%D0%9F%D0%A0%D0%98%D0%97%D0%9D%D0%90%D0%9A%D0%98&USES21ALL=1&Z21ID=MTAyNFU2UzA1OFQzRTZHNzE5",
+      "verification": "university_library_bibliography_only",
+      "implemented": false,
+      "facts": [
+        "Издания по базовым конструкциям и градации подтверждены каталогом профильного университета"
+      ],
+      "limits": [
+        "Формулы Т16/Т19, определения и правила градации не подтверждены по полному первоисточнику; реализация отсутствует"
+      ]
+    },
+    {
+      "id": "cotshl",
+      "name": "ЦОТШЛ — индивидуальное конструирование",
+      "edition": "Точное издание первоисточника не проверено",
+      "url": null,
+      "verification": "unverified",
+      "implemented": false,
+      "facts": [],
+      "limits": [
+        "Не использовать пересказанные формулы как подтверждённую методику; в конструкторы не включено"
+      ]
+    },
+    {
+      "id": "brian",
+      "name": "FreeSewing Brian v3",
+      "edition": "Документация v3, проверена 2026-10-24; исходный commit не зафиксирован",
+      "url": "https://freesewing.eu/docs/designs/brian/",
+      "verification": "official_documentation",
+      "implemented": false,
+      "facts": [
+        "Блок прямой ниже груди, индивидуальная подгонка талии не входит в его назначение",
+        "Окат имеет разные переднюю и заднюю области; размер согласуется с проймой"
+      ],
+      "limits": [
+        "Не перенесён в проект и не смешивается с собственным блоком CLO AI"
+      ]
+    },
+    {
+      "id": "brian_options",
+      "name": "FreeSewing Brian — прибавки",
+      "edition": "Онлайн-документация v3, проверена 2026-10-24",
+      "url": "https://freesewing.eu/docs/designs/brian/options/",
+      "verification": "official_documentation",
+      "implemented": false,
+      "facts": [
+        "Прибавка груди по умолчанию 15% в данной модели; заданная окружность равна мерке × 1.15",
+        "У трикотажного оката допускается малая или нулевая посадка; она не универсальна для ткани"
+      ],
+      "limits": [
+        "Процентные настройки конкретного блока не являются стандартом антропометрии и не подставляются в другие методы"
+      ]
+    },
+    {
+      "id": "fit_checklist",
+      "name": "Texas A&M, Principles of Pattern Alteration E-372",
+      "edition": "02/06, индексированный текст; полный PDF перенаправляется",
+      "url": "https://rockwall.agrilife.org/files/2011/09/patternalteration_10.pdf",
+      "verification": "partial_search_excerpt_redirect",
+      "implemented": false,
+      "facts": [
+        "Для оценки посадки важны баланс, положение долевой и свобода движения"
+      ],
+      "limits": [
+        "Полный текст сейчас недоступен по исходной ссылке; не источник точных допусков и формул"
+      ]
+    },
+    {
+      "id": "fs_catalog",
+      "name": "FreeSewing — каталог конструкций",
+      "url": "https://freesewing.eu/editor/",
+      "categories": [
+        "trousers",
+        "jacket",
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Каталог содержит разные самостоятельные блоки; наличие модели у FreeSewing не означает её реализацию в CLO AI"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_titan",
+      "name": "FreeSewing Titan — основа брюк",
+      "url": "https://freesewing.eu/designs/titan/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Используются передняя и задняя составляющие мерок талии, сидения и дуги через промежность; это основа для моделирования, не готовый фасон"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_titan_options",
+      "name": "FreeSewing Titan — настройки",
+      "url": "https://freesewing.eu/docs/designs/titan/options/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Посадка и положение талии управляются отдельными настройками конкретной основы; их нельзя объявлять универсальными прибавками"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_charlie",
+      "name": "FreeSewing Charlie — чиносы",
+      "url": "https://freesewing.eu/docs/designs/charlie/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Чиносы на основе Titan; характерное расположение переднего входа связано со смещением бокового шва"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_paco",
+      "name": "FreeSewing Paco — свободные летние брюки",
+      "url": "https://freesewing.eu/docs/designs/paco/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Отдельная конструкция с эластичным поясом и карманами; не просто переименование чиносов"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_crux",
+      "name": "FreeSewing Crux — походные брюки",
+      "url": "https://freesewing.eu/docs/designs/crux/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Предусмотрены варианты карманов, пояса, низа и анатомического колена; исходная основа Cornelius"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_cornelius",
+      "name": "FreeSewing Cornelius — велосипедные бриджи",
+      "url": "https://freesewing.eu/docs/designs/cornelius/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Историческая система Keystone послужила основой отдельной конструкции; она не является современной универсальной основой всех брюк"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_waralee",
+      "name": "FreeSewing Waralee — брюки с запахом",
+      "url": "https://freesewing.eu/docs/designs/waralee/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Прямоугольные полотнища и вырез сидения формируют иной способ закрывания изделия; обычный пояс с гульфиком не эквивалентен запаху"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_percy",
+      "name": "FreeSewing Percy — объёмные шорты с откидным передом",
+      "url": "https://freesewing.eu/docs/designs/percy/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Слово Puffy в названии не означает пуховый утеплитель; модель описана как fall-front puffy shorts"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_jaeger",
+      "name": "FreeSewing Jaeger — жакет",
+      "url": "https://freesewing.eu/docs/designs/jaeger/",
+      "categories": [
+        "jacket"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Полочки, бочки, спинка, двухчастный рукав, воротник, подборта и подкладка — отдельные зависимые детали"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_jett",
+      "name": "FreeSewing Jett — бомбер",
+      "url": "https://freesewing.eu/docs/designs/jett/",
+      "categories": [
+        "jacket"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Подкладка, втачной рукав и трикотажные отделочные детали; предусмотрены отдельные коррекции груди и живота"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_devon",
+      "name": "FreeSewing Devon — джинсовая куртка",
+      "url": "https://freesewing.eu/docs/designs/devon/",
+      "categories": [
+        "jacket"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Основа Bent, кокетки и панели; автор отдельно предупреждает о возможной проблеме глубины проймы и рекомендует макет"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_opal",
+      "name": "FreeSewing Opal — полукомбинезон",
+      "url": "https://freesewing.eu/docs/designs/opal/",
+      "categories": [
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Нагрудник, бретели, пояс и карманы; приведённая модель должна проходить через бёдра без боковой застёжки"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_opal_options",
+      "name": "FreeSewing Opal — параметры",
+      "url": "https://freesewing.eu/docs/designs/opal/options/",
+      "categories": [
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Нагрудник, его обработка, положения и формы карманов параметризуются отдельно"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_onyx",
+      "name": "FreeSewing Onyx — цельный комбинезон",
+      "url": "https://freesewing.eu/docs/designs/onyx/",
+      "categories": [
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Самостоятельная модель цельного изделия; она не импортирована в CLO AI"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_otis",
+      "name": "FreeSewing Otis — детский ромпер",
+      "url": "https://freesewing.eu/docs/designs/otis/",
+      "categories": [
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Детский ромпер; не применять его мерочную схему к рабочему взрослому комбинезону"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_archive",
+      "name": "FreeSewing — архив исходников и переезд",
+      "url": "https://github.com/freesewing/freesewing",
+      "categories": [
+        "trousers",
+        "jacket",
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "repository_metadata_and_readme",
+      "access": "MIT_for_reviewed_archive",
+      "facts": [
+        "GitHub-репозиторий архивирован; README указывает на Codeberg. Новый репозиторий не прочитан из-за robots.txt"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_license",
+      "name": "Лицензия архивного кода FreeSewing",
+      "url": "https://github.com/freesewing/freesewing/blob/develop/LICENSE",
+      "categories": [
+        "trousers",
+        "jacket",
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "license_read",
+      "access": "MIT",
+      "facts": [
+        "MIT; при включении существенных частей кода требуется сохранить уведомление. Исходный код в рабочий конструктор не копировался"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "mueller_windbreaker",
+      "name": "M. Müller & Sohn — ветровки",
+      "url": "https://www.muellerundsohn.com/en/allgemein/pattern-construction-of-windbreaker-for-men/",
+      "categories": [
+        "jacket"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_public_article",
+      "access": "public_excerpt_only",
+      "facts": [
+        "В открытой статье показаны разные варианты ветровок; полная методика предлагается отдельно"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "mueller_jumpsuit",
+      "name": "M. Müller & Sohn — конструирование комбинезонов",
+      "url": "https://www.muellerundsohn.com/en/allgemein/constructing-4-jumpsuits/",
+      "categories": [
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_public_article",
+      "access": "public_excerpt_only",
+      "facts": [
+        "Дополнительная длина у талии важна для отсутствия тяги в промежности; выбор способа зависит от конструкции"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "mueller_flared",
+      "name": "M. Müller & Sohn — варианты клёш",
+      "url": "https://www.muellerundsohn.com/en/shop/pattern-flared-trousers-for-women/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_product_description",
+      "access": "commercial_pattern_not_downloaded",
+      "facts": [
+        "Клёш описан для разных основ: джинсы, легинсы, деловые и классические брюки; один низ не определяет всю конструкцию"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "myog_alpha",
+      "name": "LearnMYOG — Alpha Raglan",
+      "url": "https://learnmyog.com/alphaRaglan.html",
+      "categories": [
+        "jacket"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_product_description",
+      "access": "personal_noncommercial_no_copy",
+      "facts": [
+        "Реглан и варианты капюшона рассчитаны на конкретный тип слоя; опубликовано ограничение личного некоммерческого использования"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "myog_windshell",
+      "name": "LearnMYOG — UL Windshell",
+      "url": "https://shop.learnmyog.com/shop/p/ul-windshell",
+      "categories": [
+        "jacket"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_product_description",
+      "access": "commercial_pattern_not_downloaded",
+      "facts": [
+        "Отдельная оболочка, совместимая по назначению со средним слоем; коммерческие лекала не приобретались"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "dla_coverall",
+      "name": "DLA MIL-DTL-32082 — холодозащитный комбинезон механика",
+      "url": "https://quicksearch.dla.mil/qsDocDetails.aspx?ident_number=212084",
+      "categories": [
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_specification_catalog",
+      "access": "catalog_only",
+      "facts": [
+        "Карточка описывает изделие, надеваемое поверх холодозащитной одежды; это не файл параметрических лекал"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "dla_parka",
+      "name": "DLA MIL-DTL-32184 — парка",
+      "url": "https://quicksearch.dla.mil/Transient/0EF0F8C72A86493F840947C60B7DFC17.pdf",
+      "categories": [
+        "jacket"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_specification_scope_excerpt",
+      "access": "public_scope_only",
+      "facts": [
+        "Прочитано описание назначения мембранной парки и отдельного капюшона. Полный комплект лекал и текущая редакция не подтверждены"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "dla_n3b",
+      "name": "DLA MIL-DTL-6279 — N-3B",
+      "url": "https://quicksearch.dla.mil/qsDocDetails.aspx?ident_number=5916",
+      "categories": [
+        "jacket"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_specification_catalog",
+      "access": "historical_catalog_only",
+      "facts": [
+        "Карточка помечает документ отменённым 21 мая 2020; использовать только как исторический ориентир"
+      ],
+      "implemented_external_pattern": false
+    }
+  ],
+  "implemented_methods": [
+    {
+      "id": "clo_ai/tshirt_drop_v1",
+      "name": "Футболка",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "category_constructors.py"
+        ]
+      },
+      "version": "legacy-1",
+      "category": "tshirt",
+      "construction_type": "Свободная футболка со спущенным плечом",
+      "required_measurements": [
+        "chest",
+        "shoulder_width",
+        "armhole_depth",
+        "neck_base",
+        "biceps"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "chest_ease_mm",
+        "hem_circumference_mm",
+        "sleeve_length_mm",
+        "cuff_circumference_mm"
+      ],
+      "formulas": {
+        "body_chest_half_width": "(chest+chest_ease_mm)/4",
+        "body_hem_half_width": "hem_circumference_mm/4",
+        "drop_shoulder_x": "(chest+chest_ease_mm)/4; not a classic set-in armhole",
+        "legacy_arm_edge": "armhole_depth-shoulder_drop_mm",
+        "legacy_sleeve_width": "2*legacy_arm_edge; cuff = cuff_circumference_mm",
+        "sleeve_taper": "(2*legacy_arm_edge-cuff_circumference_mm)/2",
+        "neck_finish_length": "sum of actual neckline cubic lengths; legacy methods do not calibrate rib stretch",
+        "hood_bottom": "front neckline/2 + back neckline/2",
+        "coat_belt_default": "1.6*max(chest+chest_ease_mm, hem_circumference_mm)",
+        "processing": "patch pockets use the supplied width/depth; cuff rectangle is cuff circumference x 80 mm"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Архивная экспериментальная геометрия со спущенным плечом; не использовать для втачного рукава"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/top_sleeveless_v1",
+      "name": "Майка / топ",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "category_constructors.py"
+        ]
+      },
+      "version": "legacy-1",
+      "category": "top",
+      "construction_type": "Свободный топ со спущенной линией плеча",
+      "required_measurements": [
+        "chest",
+        "shoulder_width",
+        "armhole_depth",
+        "neck_base",
+        "biceps"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "chest_ease_mm",
+        "hem_circumference_mm"
+      ],
+      "formulas": {
+        "body_chest_half_width": "(chest+chest_ease_mm)/4",
+        "body_hem_half_width": "hem_circumference_mm/4",
+        "drop_shoulder_x": "(chest+chest_ease_mm)/4; not a classic set-in armhole",
+        "legacy_arm_edge": "armhole_depth-shoulder_drop_mm",
+        "legacy_sleeve_width": "2*legacy_arm_edge; cuff = cuff_circumference_mm",
+        "sleeve_taper": "(2*legacy_arm_edge-cuff_circumference_mm)/2",
+        "neck_finish_length": "sum of actual neckline cubic lengths; legacy methods do not calibrate rib stretch",
+        "hood_bottom": "front neckline/2 + back neckline/2",
+        "coat_belt_default": "1.6*max(chest+chest_ease_mm, hem_circumference_mm)",
+        "processing": "patch pockets use the supplied width/depth; cuff rectangle is cuff circumference x 80 mm"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Экспериментальная геометрия ограниченного варианта; баланс и технология требуют конструктора"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/shirt_stand_v1",
+      "name": "Рубашка / блузка",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "category_constructors.py"
+        ]
+      },
+      "version": "legacy-1",
+      "category": "shirt",
+      "construction_type": "Свободная рубашка с воротником-стойкой и открытой планкой",
+      "required_measurements": [
+        "chest",
+        "shoulder_width",
+        "armhole_depth",
+        "neck_base",
+        "biceps"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "chest_ease_mm",
+        "hem_circumference_mm",
+        "sleeve_length_mm",
+        "cuff_circumference_mm"
+      ],
+      "formulas": {
+        "body_chest_half_width": "(chest+chest_ease_mm)/4",
+        "body_hem_half_width": "hem_circumference_mm/4",
+        "drop_shoulder_x": "(chest+chest_ease_mm)/4; not a classic set-in armhole",
+        "legacy_arm_edge": "armhole_depth-shoulder_drop_mm",
+        "legacy_sleeve_width": "2*legacy_arm_edge; cuff = cuff_circumference_mm",
+        "sleeve_taper": "(2*legacy_arm_edge-cuff_circumference_mm)/2",
+        "neck_finish_length": "sum of actual neckline cubic lengths; legacy methods do not calibrate rib stretch",
+        "hood_bottom": "front neckline/2 + back neckline/2",
+        "coat_belt_default": "1.6*max(chest+chest_ease_mm, hem_circumference_mm)",
+        "processing": "patch pockets use the supplied width/depth; cuff rectangle is cuff circumference x 80 mm"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Экспериментальная геометрия ограниченного варианта; баланс и технология требуют конструктора"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/hoodie_drop_v1",
+      "name": "Худи",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "category_constructors.py"
+        ]
+      },
+      "version": "legacy-1",
+      "category": "hoodie",
+      "construction_type": "Свободное худи с двухдетальным капюшоном",
+      "required_measurements": [
+        "chest",
+        "shoulder_width",
+        "armhole_depth",
+        "neck_base",
+        "biceps",
+        "head_height",
+        "head_length"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "chest_ease_mm",
+        "hem_circumference_mm",
+        "sleeve_length_mm",
+        "cuff_circumference_mm"
+      ],
+      "formulas": {
+        "body_chest_half_width": "(chest+chest_ease_mm)/4",
+        "body_hem_half_width": "hem_circumference_mm/4",
+        "drop_shoulder_x": "(chest+chest_ease_mm)/4; not a classic set-in armhole",
+        "legacy_arm_edge": "armhole_depth-shoulder_drop_mm",
+        "legacy_sleeve_width": "2*legacy_arm_edge; cuff = cuff_circumference_mm",
+        "sleeve_taper": "(2*legacy_arm_edge-cuff_circumference_mm)/2",
+        "neck_finish_length": "sum of actual neckline cubic lengths; legacy methods do not calibrate rib stretch",
+        "hood_bottom": "front neckline/2 + back neckline/2",
+        "coat_belt_default": "1.6*max(chest+chest_ease_mm, hem_circumference_mm)",
+        "processing": "patch pockets use the supplied width/depth; cuff rectangle is cuff circumference x 80 mm"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Экспериментальная геометрия ограниченного варианта; баланс и технология требуют конструктора"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/sweatshirt_drop_v1",
+      "name": "Свитшот",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "category_constructors.py"
+        ]
+      },
+      "version": "legacy-1",
+      "category": "sweatshirt",
+      "construction_type": "Свободный свитшот без отрицательных прибавок",
+      "required_measurements": [
+        "chest",
+        "shoulder_width",
+        "armhole_depth",
+        "neck_base",
+        "biceps"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "chest_ease_mm",
+        "hem_circumference_mm",
+        "sleeve_length_mm",
+        "cuff_circumference_mm"
+      ],
+      "formulas": {
+        "body_chest_half_width": "(chest+chest_ease_mm)/4",
+        "body_hem_half_width": "hem_circumference_mm/4",
+        "drop_shoulder_x": "(chest+chest_ease_mm)/4; not a classic set-in armhole",
+        "legacy_arm_edge": "armhole_depth-shoulder_drop_mm",
+        "legacy_sleeve_width": "2*legacy_arm_edge; cuff = cuff_circumference_mm",
+        "sleeve_taper": "(2*legacy_arm_edge-cuff_circumference_mm)/2",
+        "neck_finish_length": "sum of actual neckline cubic lengths; legacy methods do not calibrate rib stretch",
+        "hood_bottom": "front neckline/2 + back neckline/2",
+        "coat_belt_default": "1.6*max(chest+chest_ease_mm, hem_circumference_mm)",
+        "processing": "patch pockets use the supplied width/depth; cuff rectangle is cuff circumference x 80 mm"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Экспериментальная геометрия ограниченного варианта; баланс и технология требуют конструктора"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/jacket_unstructured_v1",
+      "name": "Жакет",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "category_constructors.py"
+        ]
+      },
+      "version": "legacy-1",
+      "category": "blazer",
+      "construction_type": "Неструктурированный жакет без лацканов и подкладки",
+      "required_measurements": [
+        "chest",
+        "shoulder_width",
+        "armhole_depth",
+        "neck_base",
+        "biceps"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "chest_ease_mm",
+        "hem_circumference_mm",
+        "sleeve_length_mm",
+        "cuff_circumference_mm"
+      ],
+      "formulas": {
+        "body_chest_half_width": "(chest+chest_ease_mm)/4",
+        "body_hem_half_width": "hem_circumference_mm/4",
+        "drop_shoulder_x": "(chest+chest_ease_mm)/4; not a classic set-in armhole",
+        "legacy_arm_edge": "armhole_depth-shoulder_drop_mm",
+        "legacy_sleeve_width": "2*legacy_arm_edge; cuff = cuff_circumference_mm",
+        "sleeve_taper": "(2*legacy_arm_edge-cuff_circumference_mm)/2",
+        "neck_finish_length": "sum of actual neckline cubic lengths; legacy methods do not calibrate rib stretch",
+        "hood_bottom": "front neckline/2 + back neckline/2",
+        "coat_belt_default": "1.6*max(chest+chest_ease_mm, hem_circumference_mm)",
+        "processing": "patch pockets use the supplied width/depth; cuff rectangle is cuff circumference x 80 mm"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Экспериментальная геометрия ограниченного варианта; баланс и технология требуют конструктора"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/jacket_stand_v1",
+      "name": "Куртка",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "category_constructors.py"
+        ]
+      },
+      "version": "legacy-1",
+      "category": "jacket",
+      "construction_type": "Свободная куртка со стойкой без утеплителя и подкладки",
+      "required_measurements": [
+        "chest",
+        "shoulder_width",
+        "armhole_depth",
+        "neck_base",
+        "biceps"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "chest_ease_mm",
+        "hem_circumference_mm",
+        "sleeve_length_mm",
+        "cuff_circumference_mm"
+      ],
+      "formulas": {
+        "body_chest_half_width": "(chest+chest_ease_mm)/4",
+        "body_hem_half_width": "hem_circumference_mm/4",
+        "drop_shoulder_x": "(chest+chest_ease_mm)/4; not a classic set-in armhole",
+        "legacy_arm_edge": "armhole_depth-shoulder_drop_mm",
+        "legacy_sleeve_width": "2*legacy_arm_edge; cuff = cuff_circumference_mm",
+        "sleeve_taper": "(2*legacy_arm_edge-cuff_circumference_mm)/2",
+        "neck_finish_length": "sum of actual neckline cubic lengths; legacy methods do not calibrate rib stretch",
+        "hood_bottom": "front neckline/2 + back neckline/2",
+        "coat_belt_default": "1.6*max(chest+chest_ease_mm, hem_circumference_mm)",
+        "processing": "patch pockets use the supplied width/depth; cuff rectangle is cuff circumference x 80 mm"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Экспериментальная геометрия ограниченного варианта; баланс и технология требуют конструктора"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/coat_wrap_v1",
+      "name": "Пальто",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "category_constructors.py"
+        ]
+      },
+      "version": "legacy-1",
+      "category": "coat",
+      "construction_type": "Свободное пальто со стойкой и съёмным поясом, без подкладки; запах не моделируется",
+      "required_measurements": [
+        "chest",
+        "shoulder_width",
+        "armhole_depth",
+        "neck_base",
+        "biceps",
+        "hips",
+        "back_waist_length",
+        "waist_hip_length"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "chest_ease_mm",
+        "hem_circumference_mm",
+        "sleeve_length_mm",
+        "cuff_circumference_mm"
+      ],
+      "formulas": {
+        "body_chest_half_width": "(chest+chest_ease_mm)/4",
+        "body_hem_half_width": "hem_circumference_mm/4",
+        "drop_shoulder_x": "(chest+chest_ease_mm)/4; not a classic set-in armhole",
+        "legacy_arm_edge": "armhole_depth-shoulder_drop_mm",
+        "legacy_sleeve_width": "2*legacy_arm_edge; cuff = cuff_circumference_mm",
+        "sleeve_taper": "(2*legacy_arm_edge-cuff_circumference_mm)/2",
+        "neck_finish_length": "sum of actual neckline cubic lengths; legacy methods do not calibrate rib stretch",
+        "hood_bottom": "front neckline/2 + back neckline/2",
+        "coat_belt_default": "1.6*max(chest+chest_ease_mm, hem_circumference_mm)",
+        "processing": "patch pockets use the supplied width/depth; cuff rectangle is cuff circumference x 80 mm"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Экспериментальная геометрия ограниченного варианта; баланс и технология требуют конструктора"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/dress_shift_v1",
+      "name": "Платье",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "category_constructors.py"
+        ]
+      },
+      "version": "legacy-1",
+      "category": "dress",
+      "construction_type": "Свободное платье без вытачек со спущенным плечом",
+      "required_measurements": [
+        "chest",
+        "shoulder_width",
+        "armhole_depth",
+        "neck_base",
+        "biceps",
+        "hips",
+        "back_waist_length",
+        "waist_hip_length"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "chest_ease_mm",
+        "hem_circumference_mm",
+        "sleeve_length_mm",
+        "cuff_circumference_mm"
+      ],
+      "formulas": {
+        "body_chest_half_width": "(chest+chest_ease_mm)/4",
+        "body_hem_half_width": "hem_circumference_mm/4",
+        "drop_shoulder_x": "(chest+chest_ease_mm)/4; not a classic set-in armhole",
+        "legacy_arm_edge": "armhole_depth-shoulder_drop_mm",
+        "legacy_sleeve_width": "2*legacy_arm_edge; cuff = cuff_circumference_mm",
+        "sleeve_taper": "(2*legacy_arm_edge-cuff_circumference_mm)/2",
+        "neck_finish_length": "sum of actual neckline cubic lengths; legacy methods do not calibrate rib stretch",
+        "hood_bottom": "front neckline/2 + back neckline/2",
+        "coat_belt_default": "1.6*max(chest+chest_ease_mm, hem_circumference_mm)",
+        "processing": "patch pockets use the supplied width/depth; cuff rectangle is cuff circumference x 80 mm"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Экспериментальная геометрия ограниченного варианта; баланс и технология требуют конструктора"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/skirt_aline_v1",
+      "name": "Юбка",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "category_constructors.py"
+        ]
+      },
+      "version": "legacy-1",
+      "category": "skirt",
+      "construction_type": "Двухпанельная юбка А-силуэта с поясом и боковой молнией",
+      "required_measurements": [
+        "waist",
+        "hips",
+        "waist_hip_length"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "waist_ease_mm",
+        "hem_circumference_mm"
+      ],
+      "formulas": {
+        "panel_top": "(waist + waist_ease_mm)/2",
+        "panel_hem": "hem_circumference_mm/2",
+        "hip_width": "top+(hem-top)*waist_hip_length/length_mm >= hips/2",
+        "belt": "top x (2*belt_width_mm)",
+        "zipper_split": "zipper_mm / actual side seam length"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Экспериментальная геометрия ограниченного варианта; баланс и технология требуют конструктора"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/jeans_loose_v1",
+      "name": "Джинсы",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "category_constructors.py"
+        ]
+      },
+      "version": "legacy-1",
+      "category": "jeans",
+      "construction_type": "Свободные брюки из денима с карманами в шве и накладными задними карманами; не классические пять карманов",
+      "required_measurements": [
+        "garment_waist_girth",
+        "hips",
+        "waist_hip_length",
+        "seated_depth",
+        "waist_knee"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "waist_drop_mm",
+        "hip_ease_mm",
+        "waist_ease_mm",
+        "knee_flat_mm",
+        "hem_flat_mm"
+      ],
+      "formulas": {
+        "hip_panel": "(hips+hip_ease_mm)/4",
+        "waist_panel": "(garment_waist_girth+waist_ease_mm)/4",
+        "levels": "body level - waist_drop_mm",
+        "short_control": "(seated_depth-waist_drop_mm+length_mm)/2",
+        "short_knee_width": "(hip_panel+hem_flat_mm)/2",
+        "jumpsuit_join": "upper hem circumference = garment_waist_girth + waist_ease_mm",
+        "dependency": "lower foundation = wide_trousers_experimental_v1; upper jumpsuit = shirt_stand_v1, no claim of professional balance"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Экспериментальная геометрия ограниченного варианта; баланс и технология требуют конструктора"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/shorts_loose_v1",
+      "name": "Шорты",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "category_constructors.py"
+        ]
+      },
+      "version": "legacy-1",
+      "category": "shorts",
+      "construction_type": "Свободные шорты с поясом, карманами в шве и молнией",
+      "required_measurements": [
+        "garment_waist_girth",
+        "hips",
+        "waist_hip_length",
+        "seated_depth"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "waist_drop_mm",
+        "hip_ease_mm",
+        "waist_ease_mm",
+        "hem_flat_mm"
+      ],
+      "formulas": {
+        "hip_panel": "(hips+hip_ease_mm)/4",
+        "waist_panel": "(garment_waist_girth+waist_ease_mm)/4",
+        "levels": "body level - waist_drop_mm",
+        "short_control": "(seated_depth-waist_drop_mm+length_mm)/2",
+        "short_knee_width": "(hip_panel+hem_flat_mm)/2",
+        "jumpsuit_join": "upper hem circumference = garment_waist_girth + waist_ease_mm",
+        "dependency": "lower foundation = wide_trousers_experimental_v1; upper jumpsuit = shirt_stand_v1, no claim of professional balance"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Экспериментальная геометрия ограниченного варианта; баланс и технология требуют конструктора"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/boxers_loose_v1",
+      "name": "Нижнее бельё",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "category_constructors.py"
+        ]
+      },
+      "version": "legacy-1",
+      "category": "underwear",
+      "construction_type": "Свободные семейные трусы с застёжкой; не облегающее бельё и не бюстгальтер",
+      "required_measurements": [
+        "garment_waist_girth",
+        "hips",
+        "waist_hip_length",
+        "seated_depth"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "waist_drop_mm",
+        "hip_ease_mm",
+        "waist_ease_mm",
+        "hem_flat_mm"
+      ],
+      "formulas": {
+        "hip_panel": "(hips+hip_ease_mm)/4",
+        "waist_panel": "(garment_waist_girth+waist_ease_mm)/4",
+        "levels": "body level - waist_drop_mm",
+        "short_control": "(seated_depth-waist_drop_mm+length_mm)/2",
+        "short_knee_width": "(hip_panel+hem_flat_mm)/2",
+        "jumpsuit_join": "upper hem circumference = garment_waist_girth + waist_ease_mm",
+        "dependency": "lower foundation = wide_trousers_experimental_v1; upper jumpsuit = shirt_stand_v1, no claim of professional balance"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Экспериментальная геометрия ограниченного варианта; баланс и технология требуют конструктора"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/headwear_gore_v1",
+      "name": "Головной убор",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "category_constructors.py"
+        ]
+      },
+      "version": "1.1.0",
+      "category": "headwear",
+      "construction_type": "Шестиклинная шапка с околышем без козырька",
+      "required_measurements": [
+        "head"
+      ],
+      "required_parameters": [
+        "height_mm",
+        "head_ease_mm"
+      ],
+      "formulas": {
+        "gore_base": "(head + head_ease_mm) / 6",
+        "crown": "(0, -height_mm), local Y down",
+        "headband": "6 * gore_base, height 50 mm",
+        "gore_controls": "(w/2,-0.6h), (0.25w,-h), mirrored for other edge"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Экспериментальная геометрия ограниченного варианта; баланс и технология требуют конструктора"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/jumpsuit_work_v1",
+      "name": "Комбинезон",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "category_constructors.py"
+        ]
+      },
+      "version": "legacy-1",
+      "category": "jumpsuit",
+      "construction_type": "Свободный рабочий комбинезон с застёжкой; баланс длины корпуса требует примерки",
+      "required_measurements": [
+        "garment_waist_girth",
+        "hips",
+        "waist_hip_length",
+        "seated_depth",
+        "waist_knee",
+        "chest",
+        "shoulder_width",
+        "armhole_depth",
+        "neck_base",
+        "biceps"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "waist_drop_mm",
+        "hip_ease_mm",
+        "waist_ease_mm",
+        "knee_flat_mm",
+        "hem_flat_mm",
+        "torso_length_mm",
+        "chest_ease_mm",
+        "sleeve_length_mm",
+        "cuff_circumference_mm"
+      ],
+      "formulas": {
+        "hip_panel": "(hips+hip_ease_mm)/4",
+        "waist_panel": "(garment_waist_girth+waist_ease_mm)/4",
+        "levels": "body level - waist_drop_mm",
+        "short_control": "(seated_depth-waist_drop_mm+length_mm)/2",
+        "short_knee_width": "(hip_panel+hem_flat_mm)/2",
+        "jumpsuit_join": "upper hem circumference = garment_waist_girth + waist_ease_mm",
+        "dependency": "lower foundation = wide_trousers_experimental_v1; upper jumpsuit = shirt_stand_v1, no claim of professional balance"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Экспериментальная геометрия ограниченного варианта; баланс и технология требуют конструктора"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/wide_trousers_experimental_v1",
+      "name": "Широкие брюки",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "garment_engine.py"
+        ]
+      },
+      "version": "wide_trousers_audit_2",
+      "category": "trousers",
+      "construction_type": "Экспериментальные широкие брюки с поясом, карманами и молнией",
+      "required_measurements": [
+        "garment_waist_girth",
+        "hips",
+        "waist_hip_length",
+        "seated_depth",
+        "waist_knee"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "waist_drop_mm",
+        "hip_ease_mm",
+        "waist_ease_mm",
+        "knee_flat_mm",
+        "hem_flat_mm"
+      ],
+      "formulas": {
+        "waist_panel": "(обхват тела на уровне посадки + прибавка по талии) / 4",
+        "hip_panel": "(обхват бёдер + полная прибавка) / 4",
+        "levels": "мерки от естественной талии минус снижение талии",
+        "crotch_extension": "max(20 мм, 0.16 × ширина панели по бедру)",
+        "back_waist": "подъём внутренней задней точки с сохранением длины талиевого участка",
+        "cutting_outline": "внешний offset полилинии стачивания на равномерный припуск"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Не проверенная профессиональная методика",
+        "Только карманы в боковом шве",
+        "Равномерный припуск; обработку низа проверить отдельно",
+        "Материал без отрицательных прибавок",
+        "Кривые CLO представлены полилиниями"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/tshirt_setin_engineering_v1",
+      "name": "Футболка с втачным рукавом",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "tshirt_engine.py"
+        ]
+      },
+      "version": "1.0.0",
+      "category": "tshirt",
+      "construction_type": "Короткий втачной рукав, круглая горловина и сложенная рибана",
+      "required_measurements": [
+        "chest",
+        "shoulder_width",
+        "chest_width",
+        "back_width",
+        "armhole_depth",
+        "biceps",
+        "head"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "chest_ease_mm",
+        "hem_circumference_mm",
+        "sleeve_length_mm",
+        "cuff_circumference_mm",
+        "neck_width_mm",
+        "front_neck_depth_mm",
+        "back_neck_depth_mm",
+        "shoulder_drop_mm",
+        "biceps_ease_mm",
+        "armhole_ease_mm",
+        "rib_stretch_percent",
+        "rib_recovery_percent",
+        "rib_application_extension_percent",
+        "body_stretch_percent"
+      ],
+      "formulas": {
+        "body_chest_half": "(chest + chest_ease_mm) / 4",
+        "shoulder_end_x": "shoulder_width_mm / 2; initial value = measured shoulder_width",
+        "front_pitch_x": "chest_width / 2 + chest_ease_mm / 8",
+        "back_pitch_x": "back_width / 2 + chest_ease_mm / 8",
+        "armhole_y": "armhole_depth + armhole_ease_mm",
+        "sleeve_solver": "L(cap_front) = L(front_armhole); L(cap_back) = L(back_armhole); front_span + back_span = biceps + biceps_ease_mm",
+        "neckband_length": "L(front_neck + back_neck) / (1 + rib_application_extension_percent / 100)",
+        "neckband_width": "2 * binding_width_mm + 2 * seam_allowance_mm (cut width)"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Собственная экспериментальная основа; не Müller, ЕМКО или ЦОТШЛ",
+        "Без вытачек, отрицательных прибавок и индивидуальной коррекции осанки",
+        "Плечевой баланс требует примерки; перед и спинка одинаковой длины",
+        "Равномерный припуск; подгибку низа определить отдельно",
+        "Долевая и надсечки CLO требуют ручного назначения",
+        "Максимальная растяжимость не заменяет пробу притачивания рибаны"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/trousers_utility_v1",
+      "name": "Брюки с объёмными карманами",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "utility_constructors.py"
+        ]
+      },
+      "version": "1.0.0",
+      "category": "trousers",
+      "construction_type": "Экспериментальные брюки с независимой формой переднего и заднего среднего шва; прямой, суженный или расклешённый низ задаётся ширинами",
+      "required_measurements": [
+        "garment_waist_girth",
+        "hips",
+        "waist_hip_length",
+        "seated_depth",
+        "waist_knee"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "waist_drop_mm",
+        "hip_ease_mm",
+        "waist_ease_mm",
+        "knee_flat_mm",
+        "hem_flat_mm"
+      ],
+      "formulas": {
+        "pocket_attachment": "U = 2 * utility_pocket_height_mm + utility_pocket_width_mm",
+        "gusset": "segmented strip U x utility_pocket_depth_mm; 3 spans on each long edge",
+        "flap": "utility_pocket_width_mm x (2 * utility_flap_height_mm)",
+        "placement": "intersection of host cross-section intervals over the full pocket/flap footprint; margin 15 mm",
+        "inseam": "fixed endpoints and tangent directions; bounded control-handle calibration to equal upper inseam arc lengths"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Собственная экспериментальная конструкция; не промышленный стандарт",
+        "Стачивание вручную по карте; посадка и подвижность требуют примерки",
+        "Карманы: передняя панель, П-образная стенка и складной клапан; фурнитура назначается вручную",
+        "Распределение ширин переда и спинки по обхватам пока симметрично; отдельные дуги талии и бёдер не используются",
+        "Независимые выступы сидения не заменяют коррекцию осанки и измерение передней и задней дуги сидения"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/jacket_utility_v1",
+      "name": "Рабочая куртка с объёмными карманами",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "utility_constructors.py"
+        ]
+      },
+      "version": "1.0.0",
+      "category": "jacket",
+      "construction_type": "Свободная куртка со спущенным плечом, стойкой и объёмными карманами; без подкладки и утеплителя",
+      "required_measurements": [
+        "chest",
+        "shoulder_width",
+        "armhole_depth",
+        "neck_base",
+        "biceps"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "chest_ease_mm",
+        "hem_circumference_mm",
+        "sleeve_length_mm",
+        "cuff_circumference_mm"
+      ],
+      "formulas": {
+        "pocket_attachment": "U = 2 * utility_pocket_height_mm + utility_pocket_width_mm",
+        "gusset": "segmented strip U x utility_pocket_depth_mm; 3 spans on each long edge",
+        "flap": "utility_pocket_width_mm x (2 * utility_flap_height_mm)",
+        "placement": "intersection of host cross-section intervals over the full pocket/flap footprint; margin 15 mm"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Собственная экспериментальная конструкция; не промышленный стандарт",
+        "Стачивание вручную по карте; посадка и подвижность требуют примерки",
+        "Карманы: передняя панель, П-образная стенка и складной клапан; фурнитура назначается вручную",
+        "Не пуховик, не мембранная оболочка, не реглан и не втачной рукав",
+        "Нельзя заявлять защитные, температурные или водонепроницаемые свойства по форме лекал"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/jumpsuit_utility_v1",
+      "name": "Рабочий комбинезон с объёмными карманами",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "utility_constructors.py"
+        ]
+      },
+      "version": "1.0.0",
+      "category": "jumpsuit",
+      "construction_type": "Свободный рабочий комбинезон со спущенным плечом, прибавкой по длине корпуса и объёмными карманами",
+      "required_measurements": [
+        "garment_waist_girth",
+        "hips",
+        "waist_hip_length",
+        "seated_depth",
+        "waist_knee",
+        "chest",
+        "shoulder_width",
+        "armhole_depth",
+        "neck_base",
+        "biceps"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "waist_drop_mm",
+        "hip_ease_mm",
+        "waist_ease_mm",
+        "knee_flat_mm",
+        "hem_flat_mm",
+        "torso_length_mm",
+        "chest_ease_mm",
+        "sleeve_length_mm",
+        "cuff_circumference_mm"
+      ],
+      "formulas": {
+        "pocket_attachment": "U = 2 * utility_pocket_height_mm + utility_pocket_width_mm",
+        "gusset": "segmented strip U x utility_pocket_depth_mm; 3 spans on each long edge",
+        "flap": "utility_pocket_width_mm x (2 * utility_flap_height_mm)",
+        "placement": "intersection of host cross-section intervals over the full pocket/flap footprint; margin 15 mm",
+        "torso": "effective_torso_length_mm = torso_length_mm + torso_ease_mm; leg length unchanged"
+      },
+      "ease_definition": "Параметры _ease_mm в полном обхвате; biceps_ease_mm — полный обхват рукава; исключения описаны методом",
+      "dependencies": "engineering.dependencies.plan",
+      "tolerances_mm": {
+        "rib": 0.2,
+        "bartack": 0.3,
+        "waistband": 0.5,
+        "pocket": 0.75,
+        "short": 0.5,
+        "long": 1
+      },
+      "limits": [
+        "Собственная экспериментальная конструкция; не промышленный стандарт",
+        "Стачивание вручную по карте; посадка и подвижность требуют примерки",
+        "Карманы: передняя панель, П-образная стенка и складной клапан; фурнитура назначается вручную",
+        "Прибавка по длине корпуса общая для переда и спинки; индивидуальный передне-задний баланс не реализован",
+        "Не прилегающий, не утеплённый и не защитный комбинезон"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false,
+      "grading": "Перестроение по полному набору мерок; межразмерная промышленная градация не реализована"
+    },
+    {
+      "id": "clo_ai/balloon_tapered_v1",
+      "name": "Объёмные брюки-баллоны с сужением",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "reference_constructors.py"
+        ],
+        "references": [
+          "https://en.anglan.co.kr/product/two-face-denim-balloon-pants-blue/4875/category/298/display/1/"
+        ]
+      },
+      "version": "1.0.0",
+      "category": "trousers",
+      "construction_type": "Широкий верх, суженный низ и нижние вытачки; ориентир Two-Face ANGLAN",
+      "required_measurements": [
+        "garment_waist_girth",
+        "hips",
+        "waist_hip_length",
+        "seated_depth",
+        "waist_knee"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "waist_drop_mm",
+        "hip_ease_mm",
+        "waist_ease_mm",
+        "knee_flat_mm",
+        "hem_flat_mm"
+      ],
+      "formulas": {
+        "hem_dart": "cut_panel_hem = hem_flat_mm + hem_dart_intake_mm; finished = cut_panel_hem - intake",
+        "sleeve": "L(cap_front/back) = L(armhole_front/back) + cap_ease_mm / 2; sleeve width = biceps + biceps_ease_mm",
+        "bust_dart": "side intake = front side arc length - back side arc length; apex from bust_spacing/2 and bust_height; equal-leg bases via normal projection",
+        "torso": "front/back waist length + torso_ease_mm; trouser length independent"
+      },
+      "dependencies": "engineering.dependencies.plan",
+      "limits": [
+        "Карманы в боковом шве вместо оригинальных джинсовых пяти карманов; кокетка не воспроизведена",
+        "hem_flat_mm — половина окружности готовой одной штанины; одна передняя и одна задняя панель имеют эту ширину каждая, до вытачки добавляется её раствор",
+        "Вытачки задаются собственными параметрами; их точные размеры по фотографиям не определены; ручная обработка низа",
+        "Собственная экспериментальная конструкция, не оригинальные лекала бренда; посадка и технология требуют макета",
+        "Автосшивания нет; Internal Line — только геометрическая разметка, не нативная долевая, вытачка или разрез"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false
+    },
+    {
+      "id": "clo_ai/workwear_zip_jacket_v1",
+      "name": "Рабочая куртка с отложным воротником",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "reference_constructors.py"
+        ],
+        "references": [
+          "https://us.carhartt-wip.com/en-us/products/detroit-jacket-hamilton-brown-tobacco-rinsed-1747?Size=S"
+        ]
+      },
+      "version": "1.0.0",
+      "category": "jacket",
+      "construction_type": "Без подкладки, втачной рукав, передняя молния; короткий или обычный корпус",
+      "required_measurements": [
+        "chest",
+        "shoulder_width",
+        "chest_width",
+        "back_width",
+        "armhole_depth",
+        "neck_base",
+        "biceps"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "chest_ease_mm",
+        "hem_circumference_mm",
+        "sleeve_length_mm",
+        "cuff_circumference_mm"
+      ],
+      "formulas": {
+        "hem_dart": "cut_panel_hem = hem_flat_mm + hem_dart_intake_mm; finished = cut_panel_hem - intake",
+        "sleeve": "L(cap_front/back) = L(armhole_front/back) + cap_ease_mm / 2; sleeve width = biceps + biceps_ease_mm",
+        "bust_dart": "side intake = front side arc length - back side arc length; apex from bust_spacing/2 and bust_height; equal-leg bases via normal projection",
+        "torso": "front/back waist length + torso_ease_mm; trouser length independent"
+      },
+      "dependencies": "engineering.dependencies.plan",
+      "limits": [
+        "Отложной воротник с линией перегиба — собственная плоская основа; перекат требует примерки",
+        "Входы нижних прорезных и нагрудного карманов размечены; разрез и молнии назначаются вручную",
+        "Регулировочные хлястики, кнопки, двухшовный рукав и промышленная обработка оригинала не воспроизведены",
+        "Собственная экспериментальная конструкция, не оригинальные лекала бренда; посадка и технология требуют макета",
+        "Автосшивания нет; Internal Line — только геометрическая разметка, не нативная долевая, вытачка или разрез"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false
+    },
+    {
+      "id": "clo_ai/women_baggy_boilersuit_v1",
+      "name": "Женский рабочий комбинезон с рукавами",
+      "source": {
+        "type": "own_experimental",
+        "files": [
+          "reference_constructors.py"
+        ],
+        "references": [
+          "https://blog.closetcorepatterns.com/fitting-advice-for-the-blanca-flight-suit/"
+        ]
+      },
+      "version": "1.0.0",
+      "category": "jumpsuit",
+      "construction_type": "Передняя молния, отдельный баланс переда и спины, умеренно свободные суженные брюки",
+      "required_measurements": [
+        "garment_waist_girth",
+        "hips",
+        "waist_hip_length",
+        "seated_depth",
+        "waist_knee",
+        "chest",
+        "shoulder_width",
+        "chest_width",
+        "back_width",
+        "armhole_depth",
+        "neck_base",
+        "biceps",
+        "front_waist_length",
+        "back_waist_length",
+        "bust_height",
+        "bust_spacing"
+      ],
+      "required_parameters": [
+        "length_mm",
+        "waist_drop_mm",
+        "hip_ease_mm",
+        "waist_ease_mm",
+        "knee_flat_mm",
+        "hem_flat_mm",
+        "chest_ease_mm",
+        "sleeve_length_mm",
+        "cuff_circumference_mm"
+      ],
+      "formulas": {
+        "hem_dart": "cut_panel_hem = hem_flat_mm + hem_dart_intake_mm; finished = cut_panel_hem - intake",
+        "sleeve": "L(cap_front/back) = L(armhole_front/back) + cap_ease_mm / 2; sleeve width = biceps + biceps_ease_mm",
+        "bust_dart": "side intake = front side arc length - back side arc length; apex from bust_spacing/2 and bust_height; equal-leg bases via normal projection",
+        "torso": "front/back waist length + torso_ease_mm; trouser length independent"
+      },
+      "dependencies": "engineering.dependencies.plan",
+      "limits": [
+        "Длина переда должна быть не меньше длины спинки; разницу поглощает боковая нагрудная вытачка с проверкой длины её ножек",
+        "Не реализована полноценная коррекция объёма груди, осанки и седалищной дуги; макет обязателен",
+        "Составная передняя застёжка корпуса и брюк; фурнитуру и проход через бёдра проверить вручную",
+        "Прибавка корпуса добавляется к каждой длине до талии; длина брюк и ширины колена/низа задаются отдельно",
+        "Собственная экспериментальная конструкция, не оригинальные лекала бренда; посадка и технология требуют макета",
+        "Автосшивания нет; Internal Line — только геометрическая разметка, не нативная долевая, вытачка или разрез"
+      ],
+      "verification": "deterministic_implementation_and_tests",
+      "professional_standard_verified": false
+    }
+  ],
+  "category_research": "engineering/category-research.json"
+}

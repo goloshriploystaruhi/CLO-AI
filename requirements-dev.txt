@@ -1,0 +1,2 @@
+# Synthetic PDF fixtures in the regression suite.
+reportlab==4.4.3

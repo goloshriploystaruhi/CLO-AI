@@ -1,0 +1,14 @@
+{
+ "title": "Notched-lapel jacket, oversize with shoulder pads",
+ "body": "women", "size": "38",
+ "fit": {"side_ease": 3.0, "arm_drop": 4.0, "across_out": 1.5},
+ "shoulder": {"extend": 3.5, "pad": 1.5},
+ "shaping": "boxy",
+ "boxy": {"dart_keep": 1.5},
+ "length": {"below_waist": 28},
+ "front": {"extension": 2, "buttons": [36, 50]},
+ "collar": {"type": "notched", "break": 36},
+ "sleeve": {"length": 57, "hem": 28, "ease": 2.5, "drop": 3, "vent": 10},
+ "lining": {"hem": "jump", "up": 1.5, "cb_pleat": 2},
+ "pockets": {"type": "patch", "x": 4, "y": 3}
+}

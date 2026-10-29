@@ -1,0 +1,12 @@
+{
+ "title": "Notched-lapel jacket, fitted",
+ "body": "women", "size": "38",
+ "fit": {"side_ease": 1.0, "arm_drop": 1.5},
+ "shaping": "darts",
+ "length": {"below_waist": 23},
+ "front": {"extension": 2, "buttons": [22, 36]},
+ "collar": {"type": "notched", "break": 22},
+ "sleeve": {"length": 59, "hem": 26, "ease": 3.0, "vent": 10},
+ "lining": {"hem": "jump", "up": 1.5, "cb_pleat": 2},
+ "pockets": {"type": "patch", "x": 4, "y": 4}
+}

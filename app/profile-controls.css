@@ -1,0 +1,11 @@
+.profile-choice {position:relative;min-width:0;justify-self:start;max-width:100%}
+.profile-choice-trigger {display:inline-flex;align-items:center;gap:10px;min-height:28px;max-width:100%;font-size:var(--h3);line-height:var(--input-leading);text-align:left;color:var(--primary);--hover-color:var(--secondary)}
+.profile-choice-trigger span:first-child {overflow-wrap:anywhere}
+.profile-choice-arrow {width:6px;height:6px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-2px) rotate(45deg);flex:none}
+.profile-choice-trigger[aria-expanded=true] .profile-choice-arrow {transform:translateY(1px) rotate(225deg)}
+.profile-choice-options {position:absolute;left:0;top:100%;z-index:50;min-width:140px;background:var(--background);border:1px solid var(--border);border-radius:2px;padding:4px 0}
+.profile-choice-option {display:block;width:100%;padding:5px 10px;text-align:left;color:var(--secondary);font-size:var(--h3);line-height:var(--input-leading);--hover-color:var(--primary)}
+.profile-choice-option[aria-selected=true],.profile-choice-option[data-active=true] {color:var(--primary);--hover-color:var(--secondary)}
+.profile-choice-option[data-active=true] {background:#111}
+.profile-choice-trigger:focus-visible {outline:1px solid var(--focus);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.profile-choice-trigger,.profile-choice-option {transition:none}}

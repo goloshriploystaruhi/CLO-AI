@@ -1,0 +1,914 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-26",
+  "exhaustive": false,
+  "categories": {
+    "trousers": {
+      "name": "Штаны и брюки",
+      "methods": [
+        "wide_trousers_experimental_v1",
+        "jeans_loose_v1",
+        "shorts_loose_v1",
+        "trousers_utility_v1",
+        "balloon_tapered_v1"
+      ],
+      "styles": [
+        {
+          "id": "balloon_tapered_v1",
+          "name": "Брюки-баллоны с нижними вытачками",
+          "method": "balloon_tapered_v1",
+          "status": "experimental",
+          "remaining": [
+            "Собственная основа, не оригинальные лекала бренда",
+            "Нужна примерка; автосшивания нет"
+          ]
+        },
+        {
+          "id": "utility_woven",
+          "name": "Свободные брюки с объёмными карманами",
+          "method": "trousers_utility_v1",
+          "status": "experimental",
+          "remaining": []
+        },
+        {
+          "id": "straight_taper_flare",
+          "name": "Прямой, суженный и расклешённый низ",
+          "method": "trousers_utility_v1",
+          "status": "experimental",
+          "remaining": [
+            "Индивидуальный баланс основы требует примерки"
+          ]
+        },
+        {
+          "id": "tailored",
+          "name": "Классические костюмные",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Раздельные дуги талии и бёдер",
+            "Вытачки и складки",
+            "Анатомическая форма пояса",
+            "Прорезные карманы"
+          ]
+        },
+        {
+          "id": "chino",
+          "name": "Чиносы",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Собственная проверенная чиносная основа",
+            "Косой вход кармана",
+            "Передне-задний баланс"
+          ]
+        },
+        {
+          "id": "five_pocket_jeans",
+          "name": "Классические джинсы с пятью карманами",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Задняя кокетка",
+            "Косые входы и монетный карман",
+            "Деним и его усадка"
+          ]
+        },
+        {
+          "id": "jogger",
+          "name": "Джоггеры и брюки на резинке",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Проходимость через бёдра",
+            "Пояс с эластичной лентой",
+            "Манжеты и их растяжение"
+          ]
+        },
+        {
+          "id": "hiking",
+          "name": "Походные и альпинистские",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Сгибание колена",
+            "Ластовица шага",
+            "Работа с ботинком и обвязкой"
+          ]
+        },
+        {
+          "id": "military_hunting",
+          "name": "Армейские и охотничьи",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Спецификация конкретного изделия",
+            "Усиления",
+            "Функциональное размещение карманов",
+            "Динамическая примерка"
+          ]
+        },
+        {
+          "id": "stretch_fitted",
+          "name": "Легинсы и облегающие",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Проверенная растяжимость и восстановление",
+            "Отрицательные прибавки по направлениям",
+            "Другой баланс сидения"
+          ]
+        },
+        {
+          "id": "shell_insulated",
+          "name": "Мембранные и утеплённые",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Внутренние слои и утеплитель",
+            "Раздельные оболочки",
+            "Герметизация и застёжки"
+          ]
+        },
+        {
+          "id": "wrap",
+          "name": "С запахом",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Проходимость и перекрытие полотнищ",
+            "Завязки и обработка открытых краёв"
+          ]
+        }
+      ],
+      "measurements_to_add": [
+        "Передняя и задняя дуги талии на выбранном уровне",
+        "Передняя и задняя дуги сидения",
+        "Передняя и полная дуга через промежность",
+        "Бедро, колено, икра, щиколотка",
+        "Длина шага и боковая длина"
+      ],
+      "source_ids": [
+        "fs_titan",
+        "fs_titan_options",
+        "fs_charlie",
+        "fs_paco",
+        "fs_crux",
+        "fs_cornelius",
+        "fs_waralee",
+        "mueller_flared",
+        "style_anglan"
+      ]
+    },
+    "jacket": {
+      "name": "Куртки",
+      "methods": [
+        "jacket_stand_v1",
+        "jacket_utility_v1",
+        "workwear_zip_jacket_v1"
+      ],
+      "styles": [
+        {
+          "id": "workwear_zip_jacket_v1",
+          "name": "Короткая или обычная рабочая куртка с отложным воротником",
+          "method": "workwear_zip_jacket_v1",
+          "status": "experimental",
+          "remaining": [
+            "Собственная основа, не оригинальные лекала бренда",
+            "Нужна примерка; автосшивания нет"
+          ]
+        },
+        {
+          "id": "simple_work",
+          "name": "Свободная рабочая со стойкой",
+          "method": "jacket_utility_v1",
+          "status": "experimental",
+          "remaining": [
+            "Ограничение: спущенное плечо, без подкладки"
+          ]
+        },
+        {
+          "id": "casual",
+          "name": "Повседневная лёгкая",
+          "method": "jacket_stand_v1",
+          "status": "experimental",
+          "remaining": [
+            "Ограничение: простой свободный блок"
+          ]
+        },
+        {
+          "id": "denim",
+          "name": "Джинсовая",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Кокетки и рельефы",
+            "Воротник с отлётом",
+            "Манжеты и шлицы"
+          ]
+        },
+        {
+          "id": "bomber",
+          "name": "Бомбер",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Втачной или регланный рукав",
+            "Подкладка",
+            "Трикотажные отделочные детали"
+          ]
+        },
+        {
+          "id": "raglan",
+          "name": "Реглан",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Отдельная основа реглана",
+            "Передняя и задняя части рукава",
+            "Подвижность плечевого пояса"
+          ]
+        },
+        {
+          "id": "shell",
+          "name": "Ветровка и мембранная оболочка",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Проверенная основа для слоя",
+            "Капюшон",
+            "Подборта и обтачки",
+            "Герметизация швов"
+          ]
+        },
+        {
+          "id": "softshell",
+          "name": "Софтшелл",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Механические свойства материала",
+            "Динамическая посадка",
+            "Технология карманов и застёжек"
+          ]
+        },
+        {
+          "id": "down",
+          "name": "Пуховик",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Раздельные наружные и внутренние оболочки",
+            "Камеры и перегородки",
+            "Объём и распределение утеплителя",
+            "Проба толщины и усадки после стёжки"
+          ]
+        },
+        {
+          "id": "parka",
+          "name": "Утеплённая парка",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Утепляющий пакет",
+            "Подкладка с прибавками",
+            "Капюшон",
+            "Ветрозащитные планки"
+          ]
+        },
+        {
+          "id": "military_hunting",
+          "name": "Армейская, охотничья и походная",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Техническое задание конкретного назначения",
+            "Подвижность с экипировкой",
+            "Усиления",
+            "Вентиляция и функциональные карманы"
+          ]
+        }
+      ],
+      "measurements_to_add": [
+        "Баланс переда и спинки от высшей плечевой точки",
+        "Наклон плеча",
+        "Ширина груди и спины",
+        "Длина согнутой руки и положение локтя",
+        "Объёмы поверх нижележащих слоёв"
+      ],
+      "source_ids": [
+        "fs_jaeger",
+        "fs_jett",
+        "fs_devon",
+        "mueller_windbreaker",
+        "myog_alpha",
+        "myog_windshell",
+        "dla_parka",
+        "dla_n3b",
+        "style_detroit"
+      ]
+    },
+    "jumpsuit": {
+      "name": "Комбинезоны",
+      "methods": [
+        "jumpsuit_work_v1",
+        "jumpsuit_utility_v1",
+        "women_baggy_boilersuit_v1"
+      ],
+      "styles": [
+        {
+          "id": "women_baggy_boilersuit_v1",
+          "name": "Женский рабочий комбинезон с рукавами и умеренно свободными брюками",
+          "method": "women_baggy_boilersuit_v1",
+          "status": "experimental",
+          "remaining": [
+            "Собственная основа, не оригинальные лекала бренда",
+            "Нужна примерка; автосшивания нет"
+          ]
+        },
+        {
+          "id": "work",
+          "name": "Свободный рабочий",
+          "method": "jumpsuit_utility_v1",
+          "status": "experimental",
+          "remaining": [
+            "Проверить общий и передне-задний баланс корпуса на примерке"
+          ]
+        },
+        {
+          "id": "bib",
+          "name": "Полукомбинезон с нагрудником",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Нагрудник и бретели",
+            "Проходимость через бёдра или боковые застёжки",
+            "Усиление мест крепления"
+          ]
+        },
+        {
+          "id": "fitted",
+          "name": "Прилегающий модный",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Вытачки и рельефы",
+            "Раздельный баланс переда и спинки",
+            "Способ надевания"
+          ]
+        },
+        {
+          "id": "stretch",
+          "name": "Трикотажный и спортивный",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Растяжимость по двум направлениям",
+            "Восстановление",
+            "Динамическая длина через корпус"
+          ]
+        },
+        {
+          "id": "insulated",
+          "name": "Утеплённый",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Пакет слоёв",
+            "Раздельные оболочки",
+            "Длина корпуса поверх одежды",
+            "Застёжки ног и корпуса"
+          ]
+        },
+        {
+          "id": "technical",
+          "name": "Защитный и специальный",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Отдельная спецификация назначения",
+            "Динамические испытания",
+            "Подтверждение защитных свойств"
+          ]
+        },
+        {
+          "id": "child",
+          "name": "Детский и ромпер",
+          "method": null,
+          "status": "not_implemented",
+          "remaining": [
+            "Отдельная детская мерочная схема",
+            "Способ надевания и обслуживания",
+            "Возрастная безопасность фурнитуры"
+          ]
+        }
+      ],
+      "measurements_to_add": [
+        "Длины переда и спинки до выбранной линии соединения",
+        "Дуга корпуса через промежность",
+        "Длины до талии стоя и при движении",
+        "Глубина и дуга сидения",
+        "Размеры поверх нижней одежды"
+      ],
+      "source_ids": [
+        "fs_opal",
+        "fs_opal_options",
+        "fs_onyx",
+        "fs_otis",
+        "mueller_jumpsuit",
+        "dla_coverall",
+        "style_blanca"
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "fs_catalog",
+      "name": "FreeSewing — каталог конструкций",
+      "url": "https://freesewing.eu/editor/",
+      "categories": [
+        "trousers",
+        "jacket",
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Каталог содержит разные самостоятельные блоки; наличие модели у FreeSewing не означает её реализацию в CLO AI"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_titan",
+      "name": "FreeSewing Titan — основа брюк",
+      "url": "https://freesewing.eu/designs/titan/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Используются передняя и задняя составляющие мерок талии, сидения и дуги через промежность; это основа для моделирования, не готовый фасон"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_titan_options",
+      "name": "FreeSewing Titan — настройки",
+      "url": "https://freesewing.eu/docs/designs/titan/options/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Посадка и положение талии управляются отдельными настройками конкретной основы; их нельзя объявлять универсальными прибавками"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_charlie",
+      "name": "FreeSewing Charlie — чиносы",
+      "url": "https://freesewing.eu/docs/designs/charlie/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Чиносы на основе Titan; характерное расположение переднего входа связано со смещением бокового шва"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_paco",
+      "name": "FreeSewing Paco — свободные летние брюки",
+      "url": "https://freesewing.eu/docs/designs/paco/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Отдельная конструкция с эластичным поясом и карманами; не просто переименование чиносов"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_crux",
+      "name": "FreeSewing Crux — походные брюки",
+      "url": "https://freesewing.eu/docs/designs/crux/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Предусмотрены варианты карманов, пояса, низа и анатомического колена; исходная основа Cornelius"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_cornelius",
+      "name": "FreeSewing Cornelius — велосипедные бриджи",
+      "url": "https://freesewing.eu/docs/designs/cornelius/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Историческая система Keystone послужила основой отдельной конструкции; она не является современной универсальной основой всех брюк"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_waralee",
+      "name": "FreeSewing Waralee — брюки с запахом",
+      "url": "https://freesewing.eu/docs/designs/waralee/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Прямоугольные полотнища и вырез сидения формируют иной способ закрывания изделия; обычный пояс с гульфиком не эквивалентен запаху"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_percy",
+      "name": "FreeSewing Percy — объёмные шорты с откидным передом",
+      "url": "https://freesewing.eu/docs/designs/percy/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Слово Puffy в названии не означает пуховый утеплитель; модель описана как fall-front puffy shorts"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_jaeger",
+      "name": "FreeSewing Jaeger — жакет",
+      "url": "https://freesewing.eu/docs/designs/jaeger/",
+      "categories": [
+        "jacket"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Полочки, бочки, спинка, двухчастный рукав, воротник, подборта и подкладка — отдельные зависимые детали"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_jett",
+      "name": "FreeSewing Jett — бомбер",
+      "url": "https://freesewing.eu/docs/designs/jett/",
+      "categories": [
+        "jacket"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Подкладка, втачной рукав и трикотажные отделочные детали; предусмотрены отдельные коррекции груди и живота"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_devon",
+      "name": "FreeSewing Devon — джинсовая куртка",
+      "url": "https://freesewing.eu/docs/designs/devon/",
+      "categories": [
+        "jacket"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Основа Bent, кокетки и панели; автор отдельно предупреждает о возможной проблеме глубины проймы и рекомендует макет"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_opal",
+      "name": "FreeSewing Opal — полукомбинезон",
+      "url": "https://freesewing.eu/docs/designs/opal/",
+      "categories": [
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Нагрудник, бретели, пояс и карманы; приведённая модель должна проходить через бёдра без боковой застёжки"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_opal_options",
+      "name": "FreeSewing Opal — параметры",
+      "url": "https://freesewing.eu/docs/designs/opal/options/",
+      "categories": [
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Нагрудник, его обработка, положения и формы карманов параметризуются отдельно"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_onyx",
+      "name": "FreeSewing Onyx — цельный комбинезон",
+      "url": "https://freesewing.eu/docs/designs/onyx/",
+      "categories": [
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Самостоятельная модель цельного изделия; она не импортирована в CLO AI"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_otis",
+      "name": "FreeSewing Otis — детский ромпер",
+      "url": "https://freesewing.eu/docs/designs/otis/",
+      "categories": [
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_documentation",
+      "access": "reference_only",
+      "facts": [
+        "Детский ромпер; не применять его мерочную схему к рабочему взрослому комбинезону"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_archive",
+      "name": "FreeSewing — архив исходников и переезд",
+      "url": "https://github.com/freesewing/freesewing",
+      "categories": [
+        "trousers",
+        "jacket",
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "repository_metadata_and_readme",
+      "access": "MIT_for_reviewed_archive",
+      "facts": [
+        "GitHub-репозиторий архивирован; README указывает на Codeberg. Новый репозиторий не прочитан из-за robots.txt"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "fs_license",
+      "name": "Лицензия архивного кода FreeSewing",
+      "url": "https://github.com/freesewing/freesewing/blob/develop/LICENSE",
+      "categories": [
+        "trousers",
+        "jacket",
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "license_read",
+      "access": "MIT",
+      "facts": [
+        "MIT; при включении существенных частей кода требуется сохранить уведомление. Исходный код в рабочий конструктор не копировался"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "mueller_windbreaker",
+      "name": "M. Müller & Sohn — ветровки",
+      "url": "https://www.muellerundsohn.com/en/allgemein/pattern-construction-of-windbreaker-for-men/",
+      "categories": [
+        "jacket"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_public_article",
+      "access": "public_excerpt_only",
+      "facts": [
+        "В открытой статье показаны разные варианты ветровок; полная методика предлагается отдельно"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "mueller_jumpsuit",
+      "name": "M. Müller & Sohn — конструирование комбинезонов",
+      "url": "https://www.muellerundsohn.com/en/allgemein/constructing-4-jumpsuits/",
+      "categories": [
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_public_article",
+      "access": "public_excerpt_only",
+      "facts": [
+        "Дополнительная длина у талии важна для отсутствия тяги в промежности; выбор способа зависит от конструкции"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "mueller_flared",
+      "name": "M. Müller & Sohn — варианты клёш",
+      "url": "https://www.muellerundsohn.com/en/shop/pattern-flared-trousers-for-women/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_product_description",
+      "access": "commercial_pattern_not_downloaded",
+      "facts": [
+        "Клёш описан для разных основ: джинсы, легинсы, деловые и классические брюки; один низ не определяет всю конструкцию"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "myog_alpha",
+      "name": "LearnMYOG — Alpha Raglan",
+      "url": "https://learnmyog.com/alphaRaglan.html",
+      "categories": [
+        "jacket"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_product_description",
+      "access": "personal_noncommercial_no_copy",
+      "facts": [
+        "Реглан и варианты капюшона рассчитаны на конкретный тип слоя; опубликовано ограничение личного некоммерческого использования"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "myog_windshell",
+      "name": "LearnMYOG — UL Windshell",
+      "url": "https://shop.learnmyog.com/shop/p/ul-windshell",
+      "categories": [
+        "jacket"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_product_description",
+      "access": "commercial_pattern_not_downloaded",
+      "facts": [
+        "Отдельная оболочка, совместимая по назначению со средним слоем; коммерческие лекала не приобретались"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "dla_coverall",
+      "name": "DLA MIL-DTL-32082 — холодозащитный комбинезон механика",
+      "url": "https://quicksearch.dla.mil/qsDocDetails.aspx?ident_number=212084",
+      "categories": [
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_specification_catalog",
+      "access": "catalog_only",
+      "facts": [
+        "Карточка описывает изделие, надеваемое поверх холодозащитной одежды; это не файл параметрических лекал"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "dla_parka",
+      "name": "DLA MIL-DTL-32184 — парка",
+      "url": "https://quicksearch.dla.mil/Transient/0EF0F8C72A86493F840947C60B7DFC17.pdf",
+      "categories": [
+        "jacket"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_specification_scope_excerpt",
+      "access": "public_scope_only",
+      "facts": [
+        "Прочитано описание назначения мембранной парки и отдельного капюшона. Полный комплект лекал и текущая редакция не подтверждены"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "dla_n3b",
+      "name": "DLA MIL-DTL-6279 — N-3B",
+      "url": "https://quicksearch.dla.mil/qsDocDetails.aspx?ident_number=5916",
+      "categories": [
+        "jacket"
+      ],
+      "checked_at": "2026-10-25",
+      "verification": "official_specification_catalog",
+      "access": "historical_catalog_only",
+      "facts": [
+        "Карточка помечает документ отменённым 21 мая 2020; использовать только как исторический ориентир"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "style_anglan",
+      "name": "ANGLAN Two-Face Denim Balloon Pants — Blue",
+      "url": "https://en.anglan.co.kr/product/two-face-denim-balloon-pants-blue/4875/category/298/display/1/",
+      "categories": [
+        "trousers"
+      ],
+      "checked_at": "2026-10-26",
+      "verification": "official_product_page_and_photos",
+      "access": "reference_only",
+      "facts": [
+        "Контрастные перед и спинка; объём формируется в том числе вытачками",
+        "Размер 1: талия 41, высота сидения 34, бедро 41, бёдра 66, низ 29, длина 101 см; размер 2: 45/36/43/70/33/103 см"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "style_detroit",
+      "name": "Carhartt WIP Detroit Jacket (Spring), I033112_00S_02",
+      "url": "https://us.carhartt-wip.com/en-us/products/detroit-jacket-hamilton-brown-tobacco-rinsed-1747?Size=S",
+      "categories": [
+        "jacket"
+      ],
+      "checked_at": "2026-10-26",
+      "verification": "official_product_page_and_photo",
+      "access": "reference_only",
+      "facts": [
+        "Версия без подкладки; Dearborn canvas, органический хлопок",
+        "Вельветовый отложной воротник, передняя молния, нагрудный карман с молнией; регулировка низа и манжет"
+      ],
+      "implemented_external_pattern": false
+    },
+    {
+      "id": "style_blanca",
+      "name": "Closet Core — fitting advice for Blanca flight suit",
+      "url": "https://blog.closetcorepatterns.com/fitting-advice-for-the-blanca-flight-suit/",
+      "categories": [
+        "jumpsuit"
+      ],
+      "checked_at": "2026-10-26",
+      "verification": "public_fitting_instructions_only",
+      "access": "reference_only",
+      "facts": [
+        "Корпус и брюки корректируют раздельно; необходима проверка баланса и свободы движений на макете"
+      ],
+      "implemented_external_pattern": false
+    }
+  ],
+  "source_review": [
+    {
+      "source_id": "fs_titan",
+      "path": "designs/titan/src/front.mjs",
+      "git_blob_sha": "8e478bd922e6a9ab8fab3f554d75e69fc11c070e",
+      "findings": [
+        "Раздельные передние мерки",
+        "Ограниченные итерации согласования среднего, шагового и бокового швов",
+        "Понижение талии выполняется после согласования основы"
+      ],
+      "url": "https://github.com/freesewing/freesewing/blob/develop/designs/titan/src/front.mjs"
+    },
+    {
+      "source_id": "fs_titan",
+      "path": "designs/titan/src/back.mjs",
+      "git_blob_sha": "6c500087c017da42c66acfb320887b5e4372f405",
+      "findings": [
+        "Раздельные задние мерки",
+        "Колено распределяется между передом и спинкой",
+        "Перед получает длины швов через промежуточное хранилище"
+      ],
+      "url": "https://github.com/freesewing/freesewing/blob/develop/designs/titan/src/back.mjs"
+    },
+    {
+      "source_id": "fs_jaeger",
+      "path": "designs/jaeger/src/front-lining.mjs",
+      "git_blob_sha": "25bfe75820296803d1bfae04c759a3365475ca52",
+      "findings": [
+        "Подкладка выделяется относительно границы подборта",
+        "Это самостоятельный замкнутый контур, а не копия всей полочки с равномерным масштабом"
+      ],
+      "url": "https://github.com/freesewing/freesewing/blob/develop/designs/jaeger/src/front-lining.mjs"
+    },
+    {
+      "source_id": "fs_opal",
+      "path": "designs/opal/src/bib.mjs",
+      "git_blob_sha": "6340f65999edec115d44d052cfa875344cfaead2",
+      "findings": [
+        "Нагрудник использует длины переда и спинки",
+        "Талиевый край согласуется с основой",
+        "Карман нагрудника зависит от его формы и размеров"
+      ],
+      "url": "https://github.com/freesewing/freesewing/blob/develop/designs/opal/src/bib.mjs"
+    }
+  ],
+  "notice": "Исследовательский индекс, не набор импортированных лекал. Нереализованный фасон нельзя подменять простым блоком. Посадка и защитные свойства не подтверждены."
+}

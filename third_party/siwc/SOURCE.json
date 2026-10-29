@@ -1,0 +1,6 @@
+{
+  "repository": "https://github.com/openai/sign-in-with-chatgpt-devkit",
+  "commit": "0a36fefeb913055c8c7a1a29b63d82b96b2e841a",
+  "license": "Sign-in with ChatGPT DevKit Noncommercial License v1.0",
+  "delivery": "Fetched and built by scripts/setup.cjs; SDK is not vendored in the public Git history"
+}

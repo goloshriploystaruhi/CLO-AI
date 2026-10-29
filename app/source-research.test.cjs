@@ -1,0 +1,18 @@
+const {test}=require('node:test'),assert=require('node:assert/strict');
+const {searchAndRead}=require('./source-research.cjs'),trace=require('./research-trace.cjs');
+test('one search returns two actual bounded readings, retaining a failed candidate without treating it as read',async()=>{
+ const calls=[],result=await searchAndRead('technical curved panels',{search:async()=>({query:'technical curved panels',results:[{url:'https://example.org/pdf'},{url:'https://example.org/method'},{url:'https://example.org/not-fetched'}]}),read:async url=>{calls.push(url);return url.endsWith('/pdf')?{url,valid:false,recoverable:true,code:'source_no_text',message:'Нет текстового слоя'}:{url,format:'html',text:'Техническое описание. '.repeat(1000),coverage:{complete:true}};}});
+ assert.equal(calls.length,2);assert.equal(result.pages_attempted,2);assert.equal(result.failed_sources[0].code,'source_no_text');assert.equal(result.evidence.length,1);assert.equal(result.evidence[0].text.length,8000);assert.equal(result.evidence[0].coverage.complete,false);assert(JSON.stringify(result).length<45000);
+});
+test('empty searches do not start readers, cancellation preserves the original reason',async()=>{
+ assert.deepEqual(await searchAndRead('nothing',{search:async()=>({results:[]}),read:()=>{throw Error('unreachable');}}),{results:[]});const controller=new AbortController(),reason=Object.assign(Error('cancel'),{name:'AbortError'});controller.abort(reason);await assert.rejects(searchAndRead('cancel',{signal:controller.signal,search:async()=>({results:[{url:'https://example.org/x'}]}),read:async()=>{throw reason;}}),error=>error===reason);
+});
+test('a shared source deadline retains an already-read page, and remaining page quota is respected',async()=>{
+ const controller=new AbortController(),rows=[{url:'https://example.org/one'},{url:'https://example.org/two'}],search=async()=>({results:rows});
+ const result=await searchAndRead('test',{signal:controller.signal,search,read:async url=>{if(url.endsWith('/one'))return {url,text:'Прочитанный метод',format:'html'};controller.abort(Object.assign(Error('Source deadline'),{name:'TimeoutError'}));throw controller.signal.reason;}});assert.equal(result.evidence[0].text,'Прочитанный метод');assert.equal(result.failed_sources.length,1);
+ let calls=0;await searchAndRead('test',{maxPages:1,search,read:async url=>{calls++;return {url,text:'Метод'};}});assert.equal(calls,1);
+});
+test('chat traces omit full pages and capabilities; old histories are compacted without changing their stored bytes',()=>{
+ const event={kind:'tool',action:'get_construction_capabilities',result:{schema:'FULLSCHEMA'.repeat(50000),text:'FULLPAGE'.repeat(50000),valid:false,message:'Точный участок',issues:[{piece:'Перед',message:'Ошибка кривой'}]}},stored=JSON.stringify({reply:{message:'Ответ сохранён'},applied:false,research:Array(50).fill(event)}),result=JSON.parse(trace.context(stored));assert.equal(result.reply.message,'Ответ сохранён');assert.equal(result.applied,false);assert(result.research.length<=16);assert(JSON.stringify(result.research).length<=14000);assert(!JSON.stringify(result).includes('FULLPAGE'));assert(!JSON.stringify(result).includes('FULLSCHEMA'));assert(result.research.some(r=>r.message==='Точный участок'));assert.equal(trace.context('unstructured saved history'),'unstructured saved history');
+});
+test('trace compaction preserves diagnostic fields when applied repeatedly',()=>{const first=trace.compact({kind:'trial',action:'trial_pattern_design',result:{valid:true,pieces:[{},{}],url:'https://example.org/method',message:'Проверено'}});assert.deepEqual(trace.compact(first),first);});

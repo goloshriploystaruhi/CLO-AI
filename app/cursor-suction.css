@@ -1,0 +1,6 @@
+::highlight(cursor-suction) {color:transparent;text-shadow:none}
+.cursor-suction-layer {position:fixed;inset:0;pointer-events:none;z-index:2147483647;overflow:hidden;contain:strict}
+.cursor-suction-glyph {position:absolute;display:block;white-space:pre;margin:0;padding:0;border:0;background:none;transform-origin:center;pointer-events:none;will-change:transform,opacity;letter-spacing:inherit;backface-visibility:hidden}
+.cursor-copy-target:active:not(:disabled) {opacity:1}
+.cursor-suction-active.shimmer {animation-play-state:paused;background-image:none}
+@media(prefers-reduced-motion:reduce){.cursor-suction-layer {display:none}}

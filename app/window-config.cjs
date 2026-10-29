@@ -1,0 +1,1 @@
+module.exports=Object.freeze({width:600,height:600,minWidth:600,maxWidth:600,minHeight:600,maxHeight:600,resizable:false,maximizable:false,fullscreenable:false,alwaysOnTop:true,movable:true,minimizable:true,closable:true,backgroundColor:'#060606',title:'CLO AI'});

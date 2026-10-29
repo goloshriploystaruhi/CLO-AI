@@ -1,0 +1,43 @@
+{
+  "repository": "https://github.com/0xZoharHuang/garment-cad-mcp",
+  "revision": "01660962d189d6c7d75f4c61fb673f02329fc5ab",
+  "subdirectory": ".agents/skills/garment-patternmaking",
+  "license": {
+    "spdx": null,
+    "status": "not_declared"
+  },
+  "source_text_vendored": false,
+  "adaptation": "Original Russian reference cards and project-scoped requirement checks for CLO AI; no upstream executable code or CAD runtime included.",
+  "documents": [
+    {
+      "file": "SKILL.md",
+      "bytes": 5311,
+      "sha256": "6ab095815575be43a10753119f9feca0495ced408b0b856250541eeb551cccec",
+      "url": "https://github.com/0xZoharHuang/garment-cad-mcp/blob/01660962d189d6c7d75f4c61fb673f02329fc5ab/.agents/skills/garment-patternmaking/SKILL.md"
+    },
+    {
+      "file": "references/native-workflow.md",
+      "bytes": 9166,
+      "sha256": "9185d0b3cd6944f7557ce6e67e2099f85ec06349d31e97499ca5ad4af6309570",
+      "url": "https://github.com/0xZoharHuang/garment-cad-mcp/blob/01660962d189d6c7d75f4c61fb673f02329fc5ab/.agents/skills/garment-patternmaking/references/native-workflow.md"
+    },
+    {
+      "file": "references/single-agent-loop.md",
+      "bytes": 20228,
+      "sha256": "7a5d991316f6c428e5b5c01b5e6c9c42b3b69f3477d90ce511ef2032bdf8577e",
+      "url": "https://github.com/0xZoharHuang/garment-cad-mcp/blob/01660962d189d6c7d75f4c61fb673f02329fc5ab/.agents/skills/garment-patternmaking/references/single-agent-loop.md"
+    },
+    {
+      "file": "references/drafting-methods.md",
+      "bytes": 3155,
+      "sha256": "15d4cfc5b51629dd91dc111c4f4990a9b0298163fbb37a5821fc5b7cdcd7a776",
+      "url": "https://github.com/0xZoharHuang/garment-cad-mcp/blob/01660962d189d6c7d75f4c61fb673f02329fc5ab/.agents/skills/garment-patternmaking/references/drafting-methods.md"
+    },
+    {
+      "file": "references/work-order.md",
+      "bytes": 5907,
+      "sha256": "b9da7760dad2732fc84e318225849802ff5b22afc75c8b42f55e3d9be98b9f7a",
+      "url": "https://github.com/0xZoharHuang/garment-cad-mcp/blob/01660962d189d6c7d75f4c61fb673f02329fc5ab/.agents/skills/garment-patternmaking/references/work-order.md"
+    }
+  ]
+}

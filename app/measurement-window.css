@@ -1,0 +1,15 @@
+html,body {height:100%;overflow:hidden}
+/* CLO.fig / MVP: the caption is outside this viewport. Header starts on
+   row 2; the illustration footer occupies the final grid row. */
+body {padding:var(--grid-row) var(--margin) var(--grid-bottom)}
+main {display:flex;flex-direction:column;gap:22px;height:100%;min-height:0;overflow-wrap:anywhere;overflow-y:auto;overflow-x:hidden}
+main.text-only {overflow-y:auto}
+main.text-only .measurement-animation {display:none}
+h1 {font-size:36px;line-height:36px;margin:0;flex:none;color:var(--inactive);font-weight:400;--tracking:-.04em}
+h2 {font-size:16px;line-height:24px;margin:16px 0 4px;color:var(--secondary)}
+p,li {font-size:16px;line-height:20px;flex:none}
+p {--tracking:.02em}
+ol,ul {padding-left:18px;margin:4px 0 12px}
+.measurement-animation {display:flex;flex-direction:column;gap:0;flex:1;min-height:0;min-width:0;margin:0;align-items:center;justify-content:center}
+.measurement-animation img {display:block;flex:1;width:100%;height:0;min-width:0;min-height:0;object-fit:contain;mix-blend-mode:lighten}
+.measurement-animation figcaption {flex:none;min-height:var(--grid-row);width:100%;color:var(--secondary);font-size:16px;line-height:20px;text-align:left;--tracking:.02em}

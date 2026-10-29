@@ -1,0 +1,16 @@
+{
+  "name": "clo-ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Experimental local AI pattern drafting companion for CLO 3D",
+  "license": "SEE LICENSE IN LICENSING.md",
+  "engines": {"node": ">=22.12.0"},
+  "scripts": {
+    "setup": "node scripts/setup.cjs",
+    "start": "node scripts/start.cjs",
+    "test": "node scripts/test.cjs",
+    "audit:public": "node scripts/audit-public.cjs",
+    "test:publication": "node --test scripts/audit-public.test.cjs",
+    "build:launcher": "powershell -NoProfile -ExecutionPolicy Bypass -File launcher/Build-Launcher.ps1"
+  }
+}

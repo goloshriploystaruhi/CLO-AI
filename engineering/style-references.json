@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-26",
+  "exhaustive": false,
+  "sources": {
+    "anglan": {
+      "url": "https://en.anglan.co.kr/product/two-face-denim-balloon-pants-blue/4875/category/298/display/1/",
+      "title": "ANGLAN Two-Face Denim Balloon Pants — Blue",
+      "checked_at": "2026-10-26",
+      "evidence": "official_product_page_and_photos",
+      "original_pattern_available": false,
+      "facts": [
+        "Контрастные перед и спинка; объём формируется в том числе вытачками",
+        "Размер 1: талия 41, высота сидения 34, бедро 41, бёдра 66, низ 29, длина 101 см; размер 2: 45/36/43/70/33/103 см"
+      ],
+      "measurement_semantics": "Опубликованные размеры изделия; способ измерения не переносится автоматически в мерки тела",
+      "source_snapshot_sha256": "7399795e4d7f779218a3af3da6f85bbf557c2fc9b2a8e66e67a4d2068741e77c"
+    },
+    "detroit": {
+      "url": "https://us.carhartt-wip.com/en-us/products/detroit-jacket-hamilton-brown-tobacco-rinsed-1747?Size=S",
+      "title": "Carhartt WIP Detroit Jacket (Spring), I033112_00S_02",
+      "checked_at": "2026-10-26",
+      "evidence": "official_product_page_and_photo",
+      "original_pattern_available": false,
+      "facts": [
+        "Версия без подкладки; Dearborn canvas, органический хлопок",
+        "Вельветовый отложной воротник, передняя молния, нагрудный карман с молнией; регулировка низа и манжет"
+      ],
+      "source_snapshot_sha256": "da0166222e1cacce9200d60015c5b86571d9db37d86cb67ad18d4a0febe4b864"
+    },
+    "blanca": {
+      "url": "https://blog.closetcorepatterns.com/fitting-advice-for-the-blanca-flight-suit/",
+      "title": "Closet Core — fitting advice for Blanca flight suit",
+      "checked_at": "2026-10-26",
+      "evidence": "public_fitting_instructions_only",
+      "original_pattern_available": false,
+      "facts": [
+        "Корпус и брюки корректируют раздельно; необходима проверка баланса и свободы движений на макете"
+      ]
+    }
+  },
+  "notes": [
+    "Публичные описания и размеры; не база оригинальных выкроек и не обучение модели",
+    "Конструктивные константы — собственные экспериментальные решения; не измеренные размеры деталей брендов"
+  ]
+}

@@ -1,0 +1,13 @@
+:root {
+  --quiet-exit:95ms;
+  --quiet-enter:200ms;
+  --quiet-overlap:65ms;
+  --quiet-exitY:-4px;
+  --quiet-enterY:5px;
+  --quiet-stagger:15ms;
+  --quiet-maxStagger:60ms;
+  --quiet-total:280ms;
+  --quiet-easeOut:cubic-bezier(.2,0,1,.9);
+  --quiet-easeIn:cubic-bezier(0,0,.38,.9)
+}
+.quiet-reveal-outgoing {position:fixed;overflow:hidden;pointer-events:none;z-index:1000;contain:layout paint;transform-origin:center}

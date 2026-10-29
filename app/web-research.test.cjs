@@ -1,0 +1,73 @@
+const {test}=require('node:test'),assert=require('node:assert/strict');
+const web=require('./web-research.cjs');
+const lookup=async()=>[{address:'93.184.216.34'}];
+test('public sources are read as bounded inert text without cookies or executable downloads',async()=>{
+ const r=await web.read('https://example.org/pattern',{lookup,fetch:async(u,o)=>{assert.equal(o.credentials,'omit');assert.equal(o.redirect,'manual');return new Response('<title>Pattern</title><script>execute()</script><h1>Waist &amp; hip</h1>',{headers:{'content-type':'text/html'}});}});
+ assert.equal(r.title,'Pattern');assert.match(r.text,/Waist & hip/);assert.doesNotMatch(r.text,/execute/);assert(r.untrusted_source);
+ const binary=await web.read('https://example.org/file',{lookup,fetch:async()=>new Response('MZ',{headers:{'content-type':'application/octet-stream'}})});assert.equal(binary.valid,false);assert.equal(binary.recoverable,true);assert.equal(binary.code,'source_unsupported');assert(binary.next_action);assert.equal(binary.text,undefined);
+});
+test('search returns real source URLs from RSS and does not turn snippets into verified pattern facts',async()=>{
+ const r=await web.search('FreeSewing Titan',{lookup,fetch:async()=>new Response('<rss><channel><item><title>Titan</title><link>https://freesewing.eu/designs/titan/</link><description>A trouser block</description></item></channel></rss>',{headers:{'content-type':'application/rss+xml'}})});
+ assert.equal(r.results.length,1);assert.equal(r.results[0].url,'https://freesewing.eu/designs/titan/');assert(r.untrusted_source);
+});
+test('private addresses, credential URLs, local redirects and oversized responses are blocked',async()=>{
+ for(const url of ['file:///secret','http://example.org','https://localhost','https://127.0.0.1','https://169.254.169.254','https://192.168.0.1','https://[::1]','https://u:p@example.org'])await assert.rejects(web.checkedUrl(url,lookup));
+ await assert.rejects(web.read('https://example.org',{lookup,fetch:async()=>new Response(null,{status:302,headers:{location:'https://127.0.0.1/private'}})}));
+ const large=await web.read('https://example.org',{lookup,fetch:async()=>new Response('x'.repeat(1500001),{headers:{'content-type':'text/plain'}})});assert.equal(large.valid,false);assert.equal(large.code,'source_too_large');
+});
+test('a shared sewing verb cannot make unrelated industrial results relevant to a new garment query',async()=>{
+ const r=await web.search('how to sew asymmetric cape pattern',{lookup,fetch:async()=>rss(item('https://drive.example/sew','SEW industrial drives','SEW high performance gear motors and automation')+item('https://maker.example/cape','Asymmetric cape drafting','Sewing a cape pattern with measured panels'))});
+ assert.equal(r.results.length,1);assert.equal(r.results[0].url,'https://maker.example/cape');assert(r.results[0].relevance.matched_terms.includes('cape'));assert.equal(r.results[0].relevance.verified_method,false);
+ const ru=await web.search('как сшить выкройку рукавов',{lookup,fetch:async()=>rss(item('https://maker.example/sleeve','Выкройка рукава','Построение рукавов и проверка длины шва')+item('https://drive.example/sew','SEW automation','Точная автоматизация для промышленности'))});assert.equal(ru.results.length,1);
+ const branded=await web.search('ANGLAN balloon trousers size chart',{lookup,fetch:async()=>rss(item('https://anglan.example/product','ANGLAN size chart','Published clothing dimensions'))});assert.equal(branded.results[0].relevance.source_role,'size_reference');
+ const fallback=await web.search('sew asymmetric cape pattern',{lookup,fetch:async url=>url.includes('bing.com')?rss(item('https://drive.example/sew','SEW EURODRIVE','Industrial drive systems')):html('<a class="result__a" href="https://maker.example/cape">Cape drafting</a><div class="result__snippet">A measured cape pattern.</div>')});assert.equal(fallback.provider,'DuckDuckGo HTML');assert.deepEqual(fallback.attempts.map(a=>a.status),['empty','results']);
+ for(const [query,title]of [['hat sewing pattern','Patterns for hats'],['dress sewing pattern','Drafting dresses']]){const plural=await web.search(query,{lookup,fetch:async()=>rss(item('https://maker.example/article',title,'Sewing construction reference'))});assert.equal(plural.results.length,1);}
+ for(const query of ['sew asymmetric cape pattern PDF download English','sew asymmetric cape European size chart']){const metadata=await web.search(query,{lookup,fetch:async()=>rss(item('https://drive.example/sew','SEW European size tables PDF download','English automation tutorial and industrial motor sizes')+item('https://maker.example/cape','Asymmetric cape drafting','Sewing pattern reference'))});assert.equal(metadata.results.length,1);assert.equal(metadata.results[0].url,'https://maker.example/cape');}
+ const sizeBrand=await web.search('Nike size chart PDF',{lookup,fetch:async()=>rss(item('https://nike.example/chart','Nike size chart','Published sizes'))});assert.equal(sizeBrand.results.length,1);assert.equal(sizeBrand.results[0].relevance.source_role,'size_reference');
+});
+test('valid HTML survives ambiguous content type while binaries never become page text',async()=>{
+ for(const mime of ['','application/octet-stream']){const r=await web.read('https://maker.example/article',{lookup,fetch:async()=>new Response('<!doctype html><html><title>Draft reference</title><p>Measured geometry and seam relationships.</p></html>',{headers:{'content-type':mime}})});assert.match(r.text,/Measured geometry/);assert.equal(r.content_type_sniffed,true);assert.equal(r.coverage.complete,true);assert(r.elapsed_ms>=0);}
+ for(const bytes of [Buffer.from('MZ\0\0'),Buffer.from([0x89,0x50,0x4e,0x47,0x0d,0x0a,0x1a,0x0a]),Buffer.from('PK\x03\x04')]){const r=await web.read('https://maker.example/binary',{lookup,fetch:async()=>new Response(bytes,{headers:{'content-type':'text/html'}})});assert.equal(r.valid,false);assert.equal(r.text,undefined);assert.equal(r.code,'source_unsupported');}
+});
+test('blocked sources, page-level timeouts and challenges return actionable facts and permit another source',async()=>{
+ const challenge=await web.read('https://maker.example/challenge',{lookup,fetch:async()=>html('<title>Just a moment</title><p>Enable JavaScript and cookies to continue.</p>')});assert.equal(challenge.code,'source_challenge');assert.equal(challenge.valid,false);assert.equal(challenge.text,undefined);
+ const blocked=await web.read('https://maker.example/blocked',{lookup,fetch:async()=>new Response('not evidence',{status:403})});assert.equal(blocked.code,'source_http');assert.equal(blocked.http_status,403);assert.equal(blocked.recoverable,true);
+ const keepAlive=setTimeout(()=>{},100),timed=await web.read('https://maker.example/slow',{lookup,timeoutMs:15,fetch:async()=>new Promise(()=>{})});clearTimeout(keepAlive);assert.equal(timed.code,'source_timeout');assert.equal(timed.recoverable,true);assert(timed.elapsed_ms<1000);
+ const next=await web.read('https://maker.example/good',{lookup,fetch:async()=>html('<title>Working source</title><p>Reference equations.</p>')});assert.match(next.text,/Reference equations/);
+ const empty=await web.read('https://maker.example/empty',{lookup,fetch:async()=>html('<title>Article</title><script>not read</script>')});assert.equal(empty.code,'source_empty');assert.equal(empty.text,undefined);
+ const noScript=await web.read('https://maker.example/script',{lookup,fetch:async()=>html('<div>You need to enable JavaScript to run this app.</div>')});assert.equal(noScript.code,'source_render_required');
+ const plainMath=await web.read('https://maker.example/math',{lookup,fetch:async()=>new Response('Check a < b and b > c before the next construction step.',{headers:{'content-type':'text/plain'}})});assert.equal(plainMath.format,'text');assert.match(plainMath.text,/a < b and b > c/);
+ const stopped=new AbortController(),reason=Object.assign(Error('Caller stop'),{name:'AbortError'});stopped.abort(reason);await assert.rejects(web.read('https://maker.example/stop',{lookup,signal:stopped.signal}),e=>e===reason);
+});
+function publicPdf(){const text='Reference geometry: measured edge lengths and named curves, not verified fit.',stream='BT /F1 12 Tf 20 240 Td ('+text+') Tj ET',objects=['<< /Type /Catalog /Pages 2 0 R >>','<< /Type /Pages /Kids [3 0 R] /Count 1 >>','<< /Type /Page /Parent 2 0 R /MediaBox [0 0 300 300] /Resources << /Font << /F1 5 0 R >> >> /Contents 4 0 R >>','<< /Length '+stream.length+' >>\nstream\n'+stream+'\nendstream','<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>','<< /Title (Public technical reference) >>'];let bytes='%PDF-1.4\n',offsets=[0];for(let i=0;i<objects.length;i++){offsets.push(Buffer.byteLength(bytes));bytes+=(i+1)+' 0 obj\n'+objects[i]+'\nendobj\n';}const xref=Buffer.byteLength(bytes);bytes+='xref\n0 7\n0000000000 65535 f \n'+offsets.slice(1).map(n=>String(n).padStart(10,'0')+' 00000 n \n').join('')+'trailer\n<< /Size 7 /Root 1 0 R /Info 6 0 R >>\nstartxref\n'+xref+'\n%%EOF';return Buffer.from(bytes);}
+test('direct and mislabeled PDF sources use the existing isolated text extractor with honest coverage',async()=>{
+ for(const mime of ['application/pdf','application/octet-stream']){const r=await web.read('https://maker.example/method.pdf',{lookup,fetch:async()=>new Response(publicPdf(),{headers:{'content-type':mime}})});assert.equal(r.format,'pdf');assert.equal(r.title,'Public technical reference');assert.match(r.text,/Reference geometry/);assert.equal(r.page_count,1);assert.equal(r.coverage.complete,true);assert.equal(r.coverage.ocr_performed,false);assert(r.elapsed_ms>0);}
+ const broken=await web.read('https://maker.example/broken.pdf',{lookup,fetch:async()=>new Response('%PDF-broken',{headers:{'content-type':'application/pdf'}})});assert.equal(broken.valid,false);assert.equal(broken.recoverable,true);assert.equal(broken.code,'source_pdf_invalid_pdf');assert.equal(broken.format,'pdf');assert.equal(broken.text,undefined);
+});
+const html=body=>new Response(body,{headers:{'content-type':'text/html'}}),rss=body=>new Response('<rss><channel>'+body+'</channel></rss>',{headers:{'content-type':'application/rss+xml'}});
+const item=(url,title='Pattern construction',description='Pattern drafting guide')=>'<item><title>'+title+'</title><link>'+url+'</link><description>'+description+'</description></item>';
+test('an empty RSS result uses an independent public provider and resolves real encoded source URLs',async()=>{
+ const requests=[];const r=await web.search('pattern construction',{lookup,fetch:async(url,o)=>{requests.push(url);assert.equal(o.credentials,'omit');assert.equal(o.redirect,'manual');if(url.includes('bing.com'))return rss('');return html('<a class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fmaker.example%2Fpattern%3Fa%3D1%26b%3D2&amp;rut=ignore">Pattern &#x63;onstruction &amp; drafting</a><a class="result__snippet">Original pattern <b>method</b>.</a>');}});
+ assert.equal(requests.length,2);assert.match(requests[1],/^https:\/\/html\.duckduckgo\.com\/html/);assert.equal(r.provider,'DuckDuckGo HTML');assert.equal(r.results.length,1);assert.equal(r.results[0].url,'https://maker.example/pattern?a=1&b=2');assert.equal(r.results[0].title,'Pattern construction & drafting');assert.equal(r.results[0].excerpt,'Original pattern method.');assert.deepEqual(r.attempts.map(x=>x.status),['empty','results']);assert(r.untrusted_source);
+});
+test('a failed RSS provider does not block fallback or expose arbitrary server/network errors',async()=>{
+ const r=await web.search('pattern',{lookup,fetch:async url=>{if(url.includes('bing.com'))throw Error('PRIVATE_NETWORK_DETAIL');return html("<a href='https://maker.example/pattern' class='result-link'>Pattern</a><td class='result-snippet'>Drafting principles</td>");}});
+ assert.equal(r.results[0].url,'https://maker.example/pattern');assert.equal(r.attempts[0].status,'unavailable');assert.equal(r.attempts[0].reason,'provider_unavailable');assert.doesNotMatch(JSON.stringify(r),/PRIVATE_NETWORK_DETAIL/);
+});
+test('search rejects private, executable and credential result destinations, deduplicates and caps relevant results',async()=>{
+ const links=['https://127.0.0.1/pattern','https://u:p@maker.example/pattern','javascript:alert(1)','https://internal.example/pattern',...Array.from({length:9},(_,i)=>'https://maker.example/pattern-'+i),'https://maker.example/pattern-0'];
+ const r=await web.search('pattern',{lookup:async host=>[{address:host==='internal.example'?'10.0.0.1':'93.184.216.34'}],fetch:async()=>rss(links.map(url=>item(url)).join(''))});
+ assert.equal(r.results.length,6);assert.equal(new Set(r.results.map(x=>x.url)).size,6);assert(r.results.every(x=>x.url.startsWith('https://maker.example/')));assert.equal(r.attempts.length,1);
+ // Even a previously valid source is re-checked for redirects when read.
+ await assert.rejects(web.read(r.results[0].url,{lookup,fetch:async()=>new Response(null,{status:302,headers:{location:'https://169.254.169.254/private'}})}));
+});
+test('blocked and irrelevant searches return honest empty evidence with provider attempts and a next research step',async()=>{
+ let calls=0;const r=await web.search('pattern',{lookup,fetch:async url=>{calls++;if(url.includes('bing.com'))return new Response('do not print this',{status:403});return html('<title>Verify you are human</title><a href="https://maker.example/recipe">Bread recipe</a>');}});
+ assert.equal(calls,2);assert.equal(r.results.length,0);assert.deepEqual(r.attempts.map(x=>x.status),['unavailable','empty']);assert.match(r.message,/переведённый запрос/);assert.doesNotMatch(JSON.stringify(r),/do not print this|https:\/\/maker.example/);
+});
+test('AbortSignal cancels search before a request or while an injected fetch/lookup ignores cancellation',async()=>{
+ const stopped=new AbortController();stopped.abort();let calls=0;await assert.rejects(web.search('pattern',{lookup,signal:stopped.signal,fetch:async()=>{calls++;return rss('');}}),{name:'AbortError'});assert.equal(calls,0);
+ const controller=new AbortController(),pending=web.search('pattern',{lookup,signal:controller.signal,fetch:async()=>{calls++;return new Promise(()=>{});}});setTimeout(()=>controller.abort(),15);await assert.rejects(pending,{name:'AbortError'});assert.equal(calls,1);
+ const dnsController=new AbortController();const waiting=web.search('pattern',{signal:dnsController.signal,lookup:async()=>new Promise(()=>{}),fetch:async()=>assert.fail('No request without checked DNS')});setTimeout(()=>dnsController.abort(),15);await assert.rejects(waiting,{name:'AbortError'});
+ assert(web.SEARCH_LIMITS.totalMs<=20000);assert(web.SEARCH_LIMITS.attemptMs*2<web.SEARCH_LIMITS.totalMs);
+});

@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/wonsukchoi/domain-experts",
+  "revision": "9554f15f4c20bfa121d1dc85db24cf4389c5b737",
+  "subdirectory": "roles/tailor-dressmaker",
+  "license": "MIT",
+  "license_file": "LICENSE",
+  "sha256": {
+    "LICENSE": "f7cb14446ec035b188d38be0c2c0ef7b2c990a17e2e4e9426f7e43b2469acae3",
+    "references/playbook.md": "d293793d573737a9b915e28d505137dc4ee228e451376b3991bd153c4b05b328",
+    "references/red-flags.md": "16fc2ac5776fd35b28c7503c15182173b25b54c90685c4d4b935a6a423f63bdc",
+    "references/vocabulary.md": "754baba78f6924b4df3403182f8b83e11974021bc1b3ccbedb4f0fd6ee50f450",
+    "SKILL.md": "cc89134b7f3ea7cd74826d1808cbfc5e8527889d83d012df64c6d875230d8138"
+  }
+}
